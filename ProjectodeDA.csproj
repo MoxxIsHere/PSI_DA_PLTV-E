@@ -150,6 +150,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="app\packages.config" />
+    <None Include="docs\.nojekyll" />
+    <None Include="docs\package-lock.json" />
+    <None Include="docs\package.json" />
+    <None Include="docs\README.md" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -182,6 +186,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="docs\index.html" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
