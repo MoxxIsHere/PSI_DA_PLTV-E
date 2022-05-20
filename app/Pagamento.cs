@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectodeDA
+namespace ProjectodeDA.app
 {
     using System;
     using System.Collections.Generic;

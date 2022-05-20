@@ -7,32 +7,34 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectodeDA
+namespace ProjectodeDA.app
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ItemMenu
+    public partial class Pedido
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ItemMenu()
+        public Pedido()
         {
-            this.Restaurantes = new HashSet<Restaurante>();
-            this.Pedido = new HashSet<Pedido>();
+            this.ItemMenus = new HashSet<ItemMenu>();
+            this.Pagamentoes = new HashSet<Pagamento>();
         }
     
         public int Id { get; set; }
-        public int IdCategoria { get; set; }
-        public string Nome { get; set; }
-        public string Fotografia { get; set; }
-        public string Ingredientes { get; set; }
-        public double Preco { get; set; }
-        public bool Ativo { get; set; }
+        public int IdTrabalhador { get; set; }
+        public int IdCliente { get; set; }
+        public int IdRestaurante { get; set; }
+        public int IdEstado { get; set; }
+        public double ValorTotal { get; set; }
     
+        public virtual Restaurante Restaurantes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Restaurante> Restaurantes { get; set; }
-        public virtual Categoria Categoria { get; set; }
+        public virtual ICollection<ItemMenu> ItemMenus { get; set; }
+        public virtual Estado Estado { get; set; }
+        public virtual Cliente Clientes { get; set; }
+        public virtual Trabalhador Trabalhador { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pedido> Pedido { get; set; }
+        public virtual ICollection<Pagamento> Pagamentoes { get; set; }
     }
 }

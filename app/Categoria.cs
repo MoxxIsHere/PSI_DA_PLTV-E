@@ -7,24 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectodeDA
+namespace ProjectodeDA.app
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class MetodoPagamento
+    public partial class Categoria
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MetodoPagamento()
+        public Categoria()
         {
-            this.Pagamentoes = new HashSet<Pagamento>();
+            this.ItemMenus = new HashSet<ItemMenu>();
         }
     
         public int Id { get; set; }
-        public string Metodopagamento { get; set; }
+        public string Nome { get; set; }
         public bool Ativo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pagamento> Pagamentoes { get; set; }
+        public virtual ICollection<ItemMenu> ItemMenus { get; set; }
     }
 }

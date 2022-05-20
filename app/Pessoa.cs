@@ -7,23 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectodeDA
+namespace ProjectodeDA.app
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Estado
+    public partial class Pessoa
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Estado()
-        {
-            this.Pedidoes = new HashSet<Pedido>();
-        }
-    
         public int Id { get; set; }
-        public bool estado { get; set; }
+        public string Nome { get; set; }
+        public int IdMorada { get; set; }
+        public int Telemovel { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Pedido> Pedidoes { get; set; }
+        public virtual Morada Moradas { get; set; }
     }
 }

@@ -7,31 +7,32 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectodeDA
+namespace ProjectodeDA.app
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Restaurante
+    public partial class ItemMenu
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Restaurante()
+        public ItemMenu()
         {
-            this.ItemMenu = new HashSet<ItemMenu>();
+            this.Restaurantes = new HashSet<Restaurante>();
             this.Pedido = new HashSet<Pedido>();
-            this.Trabalhadors = new HashSet<Trabalhador>();
         }
     
         public int Id { get; set; }
+        public int IdCategoria { get; set; }
         public string Nome { get; set; }
-        public int IdMorada { get; set; }
+        public string Fotografia { get; set; }
+        public string Ingredientes { get; set; }
+        public double Preco { get; set; }
+        public bool Ativo { get; set; }
     
-        public virtual Morada Moradas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ItemMenu> ItemMenu { get; set; }
+        public virtual ICollection<Restaurante> Restaurantes { get; set; }
+        public virtual Categoria Categoria { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pedido> Pedido { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Trabalhador> Trabalhadors { get; set; }
     }
 }

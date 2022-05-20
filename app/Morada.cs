@@ -7,18 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectodeDA
+namespace ProjectodeDA.app
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Pessoa
+    public partial class Morada
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
-        public int IdMorada { get; set; }
-        public int Telemovel { get; set; }
+        public string Rua { get; set; }
+        public string Cidade { get; set; }
+        public string CodPostal { get; set; }
+        public string Pais { get; set; }
     
-        public virtual Morada Moradas { get; set; }
+        public virtual Restaurante Restaurante { get; set; }
+        public virtual Pessoa Pessoa { get; set; }
     }
 }
