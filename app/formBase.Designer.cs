@@ -30,16 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formBase));
             this.label1 = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.tbRestSelec = new System.Windows.Forms.TextBox();
             this.btNewRest = new System.Windows.Forms.Button();
             this.gvRestaurantes = new System.Windows.Forms.DataGridView();
-            this.bsBD = new System.Windows.Forms.BindingSource(this.components);
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btEditRest = new System.Windows.Forms.Button();
+            this.btDeleteRest = new System.Windows.Forms.Button();
+            this.btRestaurantes = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bsBD = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.gvRestaurantes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsBD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,6 +132,7 @@
             this.gvRestaurantes.ShowEditingIcon = false;
             this.gvRestaurantes.Size = new System.Drawing.Size(515, 450);
             this.gvRestaurantes.TabIndex = 4;
+            this.gvRestaurantes.SelectionChanged += new System.EventHandler(this.gvRestaurantes_SelectionChanged);
             // 
             // id
             // 
@@ -153,21 +160,72 @@
             this.Morada.Name = "Morada";
             this.Morada.ReadOnly = true;
             // 
+            // btEditRest
+            // 
+            this.btEditRest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEditRest.Location = new System.Drawing.Point(144, 68);
+            this.btEditRest.Name = "btEditRest";
+            this.btEditRest.Size = new System.Drawing.Size(135, 31);
+            this.btEditRest.TabIndex = 5;
+            this.btEditRest.Text = "Editar Restaurante";
+            this.btEditRest.UseVisualStyleBackColor = true;
+            this.btEditRest.Click += new System.EventHandler(this.btEditRest_Click);
+            // 
+            // btDeleteRest
+            // 
+            this.btDeleteRest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDeleteRest.Location = new System.Drawing.Point(144, 121);
+            this.btDeleteRest.Name = "btDeleteRest";
+            this.btDeleteRest.Size = new System.Drawing.Size(135, 31);
+            this.btDeleteRest.TabIndex = 6;
+            this.btDeleteRest.Text = "Apagar Restaurante";
+            this.btDeleteRest.UseVisualStyleBackColor = true;
+            this.btDeleteRest.Click += new System.EventHandler(this.btDeleteRest_Click);
+            // 
+            // btRestaurantes
+            // 
+            this.btRestaurantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRestaurantes.Location = new System.Drawing.Point(8, 12);
+            this.btRestaurantes.Name = "btRestaurantes";
+            this.btRestaurantes.Size = new System.Drawing.Size(124, 31);
+            this.btRestaurantes.TabIndex = 7;
+            this.btRestaurantes.Text = "Restaurantes";
+            this.btRestaurantes.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Image = global::ProjectodeDA.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 301);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // formBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btRestaurantes);
+            this.Controls.Add(this.btDeleteRest);
+            this.Controls.Add(this.btEditRest);
             this.Controls.Add(this.gvRestaurantes);
             this.Controls.Add(this.btNewRest);
             this.Controls.Add(this.tbRestSelec);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.splitter1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formBase";
-            this.Text = "Form1";
+            this.Text = "Restaurantes";
+            this.Activated += new System.EventHandler(this.formBase_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvRestaurantes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsBD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -188,6 +246,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
         private System.Windows.Forms.DataGridViewTextBoxColumn Morada;
+        private System.Windows.Forms.Button btEditRest;
+        private System.Windows.Forms.Button btDeleteRest;
+        private System.Windows.Forms.Button btRestaurantes;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -496,7 +496,7 @@
           <NavigationProperty Name="Moradas" Relationship="Model1.PessoaMorada" FromRole="Pessoa" ToRole="Morada" />
         </EntityType>
         <Association Name="RestauranteMorada">
-          <End Type="Model1.Restaurante" Role="Restaurante" Multiplicity="1" />
+          <End Type="Model1.Restaurante" Role="Restaurante" Multiplicity="0..1" />
           <End Type="Model1.Morada" Role="Morada" Multiplicity="1" />
         </Association>
         <Association Name="ItemMenuRestaurante">
@@ -532,7 +532,7 @@
           <End Type="Model1.Pagamento" Role="Pagamento" Multiplicity="*" />
         </Association>
         <Association Name="PessoaMorada">
-          <End Type="Model1.Pessoa" Role="Pessoa" Multiplicity="1" />
+          <End Type="Model1.Pessoa" Role="Pessoa" Multiplicity="0..1" />
           <End Type="Model1.Morada" Role="Morada" Multiplicity="1" />
         </Association>
       </Schema>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formNewRest));
             this.btCancel = new System.Windows.Forms.Button();
             this.btConfirm = new System.Windows.Forms.Button();
             this.tbRua = new System.Windows.Forms.TextBox();
@@ -38,9 +39,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.gbMorada = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbPais = new System.Windows.Forms.TextBox();
             this.gpRestaurante = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblError = new System.Windows.Forms.Label();
             this.gbMorada.SuspendLayout();
             this.gpRestaurante.SuspendLayout();
@@ -117,6 +121,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(571, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(10, 13);
@@ -129,7 +134,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 26);
+            this.label2.Location = new System.Drawing.Point(10, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 7;
@@ -141,6 +146,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(437, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
@@ -149,6 +155,9 @@
             // 
             // gbMorada
             // 
+            this.gbMorada.Controls.Add(this.label6);
+            this.gbMorada.Controls.Add(this.label5);
+            this.gbMorada.Controls.Add(this.tbPais);
             this.gbMorada.Controls.Add(this.tbCidade);
             this.gbMorada.Controls.Add(this.label3);
             this.gbMorada.Controls.Add(this.tbRua);
@@ -156,6 +165,7 @@
             this.gbMorada.Controls.Add(this.tbCodigoPostalCol2);
             this.gbMorada.Controls.Add(this.label1);
             this.gbMorada.Controls.Add(this.tbCodigoPostalCol1);
+            this.gbMorada.ForeColor = System.Drawing.Color.White;
             this.gbMorada.Location = new System.Drawing.Point(2, 2);
             this.gbMorada.Name = "gbMorada";
             this.gbMorada.Size = new System.Drawing.Size(652, 88);
@@ -163,16 +173,63 @@
             this.gbMorada.TabStop = false;
             this.gbMorada.Text = "Morada";
             // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(416, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Cód. Postal";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(190, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "País";
+            // 
+            // tbPais
+            // 
+            this.tbPais.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbPais.Location = new System.Drawing.Point(225, 45);
+            this.tbPais.Name = "tbPais";
+            this.tbPais.Size = new System.Drawing.Size(185, 20);
+            this.tbPais.TabIndex = 9;
+            this.tbPais.Text = "Portugal";
+            // 
             // gpRestaurante
             // 
             this.gpRestaurante.Controls.Add(this.tbNome);
             this.gpRestaurante.Controls.Add(this.label4);
+            this.gpRestaurante.ForeColor = System.Drawing.Color.White;
             this.gpRestaurante.Location = new System.Drawing.Point(2, 86);
             this.gpRestaurante.Name = "gpRestaurante";
             this.gpRestaurante.Size = new System.Drawing.Size(652, 62);
             this.gpRestaurante.TabIndex = 10;
             this.gpRestaurante.TabStop = false;
             this.gpRestaurante.Text = "Restaurante";
+            // 
+            // tbNome
+            // 
+            this.tbNome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbNome.Location = new System.Drawing.Point(51, 22);
+            this.tbNome.Name = "tbNome";
+            this.tbNome.Size = new System.Drawing.Size(591, 20);
+            this.tbNome.TabIndex = 9;
             // 
             // label4
             // 
@@ -186,26 +243,17 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Nome";
             // 
-            // tbNome
-            // 
-            this.tbNome.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbNome.Location = new System.Drawing.Point(51, 22);
-            this.tbNome.Name = "tbNome";
-            this.tbNome.Size = new System.Drawing.Size(281, 20);
-            this.tbNome.TabIndex = 9;
-            // 
             // lblError
             // 
             this.lblError.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.Location = new System.Drawing.Point(180, 159);
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.IndianRed;
+            this.lblError.Location = new System.Drawing.Point(291, 166);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(345, 20);
+            this.lblError.Size = new System.Drawing.Size(232, 13);
             this.lblError.TabIndex = 10;
             this.lblError.Text = "Todos os campos precisam de ser preenchidos.";
             this.lblError.Visible = false;
@@ -215,6 +263,7 @@
             this.AcceptButton = this.btConfirm;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.CancelButton = this.btCancel;
             this.ClientSize = new System.Drawing.Size(656, 181);
             this.Controls.Add(this.lblError);
@@ -222,15 +271,16 @@
             this.Controls.Add(this.gbMorada);
             this.Controls.Add(this.btConfirm);
             this.Controls.Add(this.btCancel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "formNewRest";
-            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novo Restaurante";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.formNewRest_Load);
             this.gbMorada.ResumeLayout(false);
             this.gbMorada.PerformLayout();
             this.gpRestaurante.ResumeLayout(false);
@@ -256,5 +306,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbNome;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tbPais;
     }
 }
