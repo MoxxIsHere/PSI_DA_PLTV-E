@@ -184,6 +184,7 @@
   <ItemGroup>
     <Content Include="docs\index.html" />
     <None Include="docs\logo.png" />
+    <Content Include="docs\logo.ico" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

@@ -32,6 +32,8 @@ namespace ProjectodeDA.app
                 tbCodigoPostalCol1.Text = RestaurEdit.Moradas.CodPostal.Remove(4);
                 tbCodigoPostalCol2.Text = RestaurEdit.Moradas.CodPostal.Substring(5);
                 tbNome.Text = RestaurEdit.Nome;
+
+                //how does this work???
             }
             else
             {
