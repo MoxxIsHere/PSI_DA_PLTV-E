@@ -7,24 +7,28 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectodeDA.app
+namespace ProjectodeDA
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Categoria
+    public partial class ItemMenu
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Categoria()
+        public ItemMenu()
         {
-            this.ItemMenus = new HashSet<ItemMenu>();
+            this.Restaurantes = new HashSet<Restaurante>();
         }
     
         public int Id { get; set; }
         public string Nome { get; set; }
+        public string Fotografia { get; set; }
+        public string Ingredientes { get; set; }
+        public double Preco { get; set; }
         public bool Ativo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ItemMenu> ItemMenus { get; set; }
+        public virtual ICollection<Restaurante> Restaurantes { get; set; }
+        public virtual Categoria Categoria { get; set; }
     }
 }

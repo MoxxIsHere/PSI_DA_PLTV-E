@@ -7,23 +7,25 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectodeDA.app
+namespace ProjectodeDA
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class MetodoPagamento
+    public partial class Pedido
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MetodoPagamento()
+        public Pedido()
         {
             this.Pagamentoes = new HashSet<Pagamento>();
         }
     
         public int Id { get; set; }
-        public string Metodopagamento { get; set; }
-        public bool Ativo { get; set; }
+        public double ValorTotal { get; set; }
     
+        public virtual Restaurante Restaurantes { get; set; }
+        public virtual Estado Estado { get; set; }
+        public virtual Cliente Clientes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pagamento> Pagamentoes { get; set; }
     }

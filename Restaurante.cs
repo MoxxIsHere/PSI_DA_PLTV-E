@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectodeDA.app
+namespace ProjectodeDA
 {
     using System;
     using System.Collections.Generic;
@@ -24,7 +24,6 @@ namespace ProjectodeDA.app
     
         public int Id { get; set; }
         public string Nome { get; set; }
-        public int IdMorada { get; set; }
     
         public virtual Morada Moradas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

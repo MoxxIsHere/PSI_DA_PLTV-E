@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProjectodeDA.app
+namespace ProjectodeDA
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DAEntities : DbContext
+    public partial class Model1Container : DbContext
     {
-        public DAEntities()
-            : base("name=DAEntities")
+        public Model1Container()
+            : base("name=Model1Container")
         {
         }
     
@@ -25,14 +25,14 @@ namespace ProjectodeDA.app
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Morada> Moradas { get; set; }
         public virtual DbSet<Restaurante> Restaurantes { get; set; }
         public virtual DbSet<ItemMenu> ItemMenus { get; set; }
         public virtual DbSet<Categoria> Categorias { get; set; }
         public virtual DbSet<Pedido> Pedidos { get; set; }
-        public virtual DbSet<Estado> Estadoes { get; set; }
-        public virtual DbSet<Pessoa> Pessoas { get; set; }
+        public virtual DbSet<Estado> Estados { get; set; }
         public virtual DbSet<Pagamento> Pagamentos { get; set; }
         public virtual DbSet<MetodoPagamento> MetodosPagamento { get; set; }
+        public virtual DbSet<Morada> Moradas { get; set; }
+        public virtual DbSet<Pessoa> Pessoas { get; set; }
     }
 }
