@@ -51,7 +51,6 @@ namespace ProjectodeDA
                 Restaurante restSel = gvRestaurantes.SelectedRows[0].DataBoundItem as Restaurante;
                 dados.Restaurantes.Remove(restSel);
                 dados.SaveChanges();
-                bsBD.DataSource = dados.Restaurantes.ToList<Restaurante>();
             }
             catch (Exception ex)
             {
@@ -70,6 +69,11 @@ namespace ProjectodeDA
             {
                 tbRestSelec.Text = "Error";
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bsBD.DataSource = dados.Restaurantes.ToList<Restaurante>();
         }
     }
 }

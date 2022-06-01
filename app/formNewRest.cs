@@ -25,6 +25,8 @@ namespace ProjectodeDA.app
         {
             if (EditStatus)
             {
+                dados = new Model1Container();
+
                 Text = "Editar Restaurante";
                 tbRua.Text = RestaurEdit.Moradas.Rua;
                 tbCidade.Text = RestaurEdit.Moradas.Cidade;
@@ -32,8 +34,6 @@ namespace ProjectodeDA.app
                 tbCodigoPostalCol1.Text = RestaurEdit.Moradas.CodPostal.Remove(4);
                 tbCodigoPostalCol2.Text = RestaurEdit.Moradas.CodPostal.Substring(5);
                 tbNome.Text = RestaurEdit.Nome;
-
-                //how does this work???
             }
             else
             {
@@ -45,6 +45,18 @@ namespace ProjectodeDA.app
             if (CheckFilled() && EditStatus)
             {
 
+                Restaurante editValuesRest = dados.Restaurantes.Find(RestaurEdit.Id);
+                Morada editValuesMor = dados.Moradas.Find(RestaurEdit.Moradas.Id);
+
+                editValuesMor.Rua = tbRua.Text;
+                editValuesMor.Cidade = tbCidade.Text;
+                editValuesMor.Pais = tbPais.Text;
+                editValuesMor.CodPostal = (tbCodigoPostalCol1 + "-" + tbCodigoPostalCol2.Text);
+                editValuesRest.Nome = tbNome.Text;
+
+                dados.SaveChanges();
+
+                this.Dispose();
             }
             else if((CheckFilled() && EditStatus) == false)
             {
