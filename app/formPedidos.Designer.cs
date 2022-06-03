@@ -40,14 +40,31 @@
             this.tabBox = new System.Windows.Forms.TabControl();
             this.tabPedidos = new System.Windows.Forms.TabPage();
             this.tabClientes = new System.Windows.Forms.TabPage();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.bsDB = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btSearch = new System.Windows.Forms.Button();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.lbClientes = new System.Windows.Forms.ListBox();
+            this.bsDB = new System.Windows.Forms.BindingSource(this.components);
+            this.btDeleteRest = new System.Windows.Forms.Button();
+            this.btEditClient = new System.Windows.Forms.Button();
+            this.btNewClient = new System.Windows.Forms.Button();
+            this.gpDisplayPessoa = new System.Windows.Forms.GroupBox();
+            this.tbNome = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbTelemovel = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbMorada = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbTGasto = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbNif = new System.Windows.Forms.TextBox();
+            this.btConfirmar = new System.Windows.Forms.Button();
+            this.btMoradas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabBox.SuspendLayout();
             this.tabClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsDB)).BeginInit();
+            this.gpDisplayPessoa.SuspendLayout();
             this.SuspendLayout();
             // 
             // btMenu
@@ -161,9 +178,14 @@
             // tabClientes
             // 
             this.tabClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.tabClientes.Controls.Add(this.btConfirmar);
+            this.tabClientes.Controls.Add(this.gpDisplayPessoa);
+            this.tabClientes.Controls.Add(this.btDeleteRest);
             this.tabClientes.Controls.Add(this.btSearch);
-            this.tabClientes.Controls.Add(this.textBox1);
-            this.tabClientes.Controls.Add(this.listBox1);
+            this.tabClientes.Controls.Add(this.btEditClient);
+            this.tabClientes.Controls.Add(this.tbSearch);
+            this.tabClientes.Controls.Add(this.btNewClient);
+            this.tabClientes.Controls.Add(this.lbClientes);
             this.tabClientes.Location = new System.Drawing.Point(24, 4);
             this.tabClientes.Name = "tabClientes";
             this.tabClientes.Padding = new System.Windows.Forms.Padding(3);
@@ -171,40 +193,219 @@
             this.tabClientes.TabIndex = 1;
             this.tabClientes.Text = "Clientes";
             // 
-            // listBox1
-            // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.DataSource = this.bsDB;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(299, 35);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(332, 404);
-            this.listBox1.TabIndex = 0;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(299, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(303, 23);
-            this.textBox1.TabIndex = 1;
-            // 
             // btSearch
             // 
             this.btSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btSearch.BackColor = System.Drawing.SystemColors.Window;
             this.btSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSearch.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btSearch.Location = new System.Drawing.Point(608, 6);
+            this.btSearch.Image = global::ProjectodeDA.Properties.Resources.search;
+            this.btSearch.Location = new System.Drawing.Point(263, 107);
             this.btSearch.Name = "btSearch";
-            this.btSearch.Size = new System.Drawing.Size(23, 23);
+            this.btSearch.Size = new System.Drawing.Size(25, 25);
             this.btSearch.TabIndex = 2;
             this.btSearch.UseVisualStyleBackColor = false;
             this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSearch.Location = new System.Drawing.Point(6, 109);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(253, 23);
+            this.tbSearch.TabIndex = 1;
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
+            // 
+            // lbClientes
+            // 
+            this.lbClientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbClientes.DataSource = this.bsDB;
+            this.lbClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbClientes.FormattingEnabled = true;
+            this.lbClientes.ItemHeight = 20;
+            this.lbClientes.Location = new System.Drawing.Point(294, -2);
+            this.lbClientes.Name = "lbClientes";
+            this.lbClientes.Size = new System.Drawing.Size(340, 444);
+            this.lbClientes.TabIndex = 0;
+            this.lbClientes.SelectedValueChanged += new System.EventHandler(this.lbClientes_SelectedValueChanged);
+            // 
+            // btDeleteRest
+            // 
+            this.btDeleteRest.Enabled = false;
+            this.btDeleteRest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDeleteRest.Location = new System.Drawing.Point(198, 8);
+            this.btDeleteRest.Name = "btDeleteRest";
+            this.btDeleteRest.Size = new System.Drawing.Size(90, 90);
+            this.btDeleteRest.TabIndex = 22;
+            this.btDeleteRest.Text = "Apagar Cliente";
+            this.btDeleteRest.UseVisualStyleBackColor = true;
+            this.btDeleteRest.Click += new System.EventHandler(this.btDeleteRest_Click);
+            // 
+            // btEditClient
+            // 
+            this.btEditClient.Enabled = false;
+            this.btEditClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEditClient.Location = new System.Drawing.Point(102, 8);
+            this.btEditClient.Name = "btEditClient";
+            this.btEditClient.Size = new System.Drawing.Size(90, 90);
+            this.btEditClient.TabIndex = 21;
+            this.btEditClient.Text = "Editar Cliente";
+            this.btEditClient.UseVisualStyleBackColor = true;
+            this.btEditClient.Click += new System.EventHandler(this.btEditClient_Click);
+            // 
+            // btNewClient
+            // 
+            this.btNewClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNewClient.Location = new System.Drawing.Point(6, 8);
+            this.btNewClient.Name = "btNewClient";
+            this.btNewClient.Size = new System.Drawing.Size(90, 90);
+            this.btNewClient.TabIndex = 20;
+            this.btNewClient.Text = "Novo Cliente";
+            this.btNewClient.UseVisualStyleBackColor = true;
+            this.btNewClient.Click += new System.EventHandler(this.btNewClient_Click);
+            // 
+            // gpDisplayPessoa
+            // 
+            this.gpDisplayPessoa.Controls.Add(this.btMoradas);
+            this.gpDisplayPessoa.Controls.Add(this.label6);
+            this.gpDisplayPessoa.Controls.Add(this.tbNif);
+            this.gpDisplayPessoa.Controls.Add(this.label5);
+            this.gpDisplayPessoa.Controls.Add(this.tbTGasto);
+            this.gpDisplayPessoa.Controls.Add(this.label4);
+            this.gpDisplayPessoa.Controls.Add(this.tbMorada);
+            this.gpDisplayPessoa.Controls.Add(this.label3);
+            this.gpDisplayPessoa.Controls.Add(this.tbTelemovel);
+            this.gpDisplayPessoa.Controls.Add(this.label2);
+            this.gpDisplayPessoa.Controls.Add(this.tbNome);
+            this.gpDisplayPessoa.ForeColor = System.Drawing.SystemColors.Window;
+            this.gpDisplayPessoa.Location = new System.Drawing.Point(6, 184);
+            this.gpDisplayPessoa.Name = "gpDisplayPessoa";
+            this.gpDisplayPessoa.Size = new System.Drawing.Size(282, 250);
+            this.gpDisplayPessoa.TabIndex = 23;
+            this.gpDisplayPessoa.TabStop = false;
+            this.gpDisplayPessoa.Text = "Cliente";
+            // 
+            // tbNome
+            // 
+            this.tbNome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbNome.Location = new System.Drawing.Point(6, 33);
+            this.tbNome.Name = "tbNome";
+            this.tbNome.ReadOnly = true;
+            this.tbNome.Size = new System.Drawing.Size(270, 23);
+            this.tbNome.TabIndex = 24;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(231, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 17);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Nome";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(203, 59);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 17);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Telemóvel";
+            // 
+            // tbTelemovel
+            // 
+            this.tbTelemovel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbTelemovel.Location = new System.Drawing.Point(6, 79);
+            this.tbTelemovel.Name = "tbTelemovel";
+            this.tbTelemovel.ReadOnly = true;
+            this.tbTelemovel.Size = new System.Drawing.Size(270, 23);
+            this.tbTelemovel.TabIndex = 26;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(220, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 17);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Morada";
+            // 
+            // tbMorada
+            // 
+            this.tbMorada.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbMorada.Location = new System.Drawing.Point(6, 125);
+            this.tbMorada.Name = "tbMorada";
+            this.tbMorada.ReadOnly = true;
+            this.tbMorada.Size = new System.Drawing.Size(247, 23);
+            this.tbMorada.TabIndex = 28;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(194, 151);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(82, 17);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Total Gasto";
+            // 
+            // tbTGasto
+            // 
+            this.tbTGasto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbTGasto.Location = new System.Drawing.Point(6, 171);
+            this.tbTGasto.Name = "tbTGasto";
+            this.tbTGasto.ReadOnly = true;
+            this.tbTGasto.Size = new System.Drawing.Size(270, 23);
+            this.tbTGasto.TabIndex = 30;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(79, 197);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(197, 17);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Número de Idenficiação Fiscal";
+            // 
+            // tbNif
+            // 
+            this.tbNif.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbNif.Location = new System.Drawing.Point(6, 217);
+            this.tbNif.Name = "tbNif";
+            this.tbNif.ReadOnly = true;
+            this.tbNif.Size = new System.Drawing.Size(270, 23);
+            this.tbNif.TabIndex = 32;
+            // 
+            // btConfirmar
+            // 
+            this.btConfirmar.Enabled = false;
+            this.btConfirmar.Location = new System.Drawing.Point(212, 138);
+            this.btConfirmar.Name = "btConfirmar";
+            this.btConfirmar.Size = new System.Drawing.Size(75, 40);
+            this.btConfirmar.TabIndex = 24;
+            this.btConfirmar.Text = "Confirm";
+            this.btConfirmar.UseVisualStyleBackColor = true;
+            this.btConfirmar.Click += new System.EventHandler(this.btConfirmar_Click);
+            // 
+            // btMoradas
+            // 
+            this.btMoradas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btMoradas.BackColor = System.Drawing.SystemColors.Window;
+            this.btMoradas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btMoradas.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btMoradas.Location = new System.Drawing.Point(256, 125);
+            this.btMoradas.Name = "btMoradas";
+            this.btMoradas.Size = new System.Drawing.Size(25, 23);
+            this.btMoradas.TabIndex = 25;
+            this.btMoradas.Text = "...";
+            this.btMoradas.UseVisualStyleBackColor = false;
+            this.btMoradas.Click += new System.EventHandler(this.btMoradas_Click);
             // 
             // formPedidos
             // 
@@ -233,6 +434,8 @@
             this.tabClientes.ResumeLayout(false);
             this.tabClientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsDB)).EndInit();
+            this.gpDisplayPessoa.ResumeLayout(false);
+            this.gpDisplayPessoa.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,9 +453,25 @@
         private System.Windows.Forms.TabControl tabBox;
         private System.Windows.Forms.TabPage tabPedidos;
         private System.Windows.Forms.TabPage tabClientes;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbClientes;
         private System.Windows.Forms.BindingSource bsDB;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.Button btSearch;
+        private System.Windows.Forms.Button btDeleteRest;
+        private System.Windows.Forms.Button btEditClient;
+        private System.Windows.Forms.Button btNewClient;
+        private System.Windows.Forms.GroupBox gpDisplayPessoa;
+        private System.Windows.Forms.TextBox tbNome;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbNif;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tbTGasto;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox tbMorada;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbTelemovel;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btConfirmar;
+        private System.Windows.Forms.Button btMoradas;
     }
 }
