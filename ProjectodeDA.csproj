@@ -80,6 +80,12 @@
     <Compile Include="app\formBase.Designer.cs">
       <DependentUpon>formBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="app\formGestaoGeral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="app\formGestaoGeral.Designer.cs">
+      <DependentUpon>formGestaoGeral.cs</DependentUpon>
+    </Compile>
     <Compile Include="app\formNewRest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,11 +160,11 @@
     <EmbeddedResource Include="app\formBase.resx">
       <DependentUpon>formBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="app\formGestaoGeral.resx">
+      <DependentUpon>formGestaoGeral.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="app\formNewRest.resx">
       <DependentUpon>formNewRest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="app\formPedidos.resx">
-      <DependentUpon>formPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="app\pessoasMoradas.resx">
       <DependentUpon>pessoasMoradas.cs</DependentUpon>
@@ -201,11 +207,14 @@
     <None Include="app\App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="docs\edit.png" />
+    <None Include="docs\delete.png" />
     <Content Include="docs\index.html" />
     <None Include="docs\logo.png" />
     <Content Include="docs\logo.ico" />
     <None Include="docs\refresh.png" />
     <None Include="docs\search.png" />
+    <None Include="docs\new.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

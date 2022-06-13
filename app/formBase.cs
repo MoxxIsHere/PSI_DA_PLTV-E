@@ -16,15 +16,15 @@ namespace ProjectodeDA
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            tbRestSelec.Text = "Nenhum";
             dados = new Model1Container();
             bsBD.DataSource = dados.Restaurantes.ToList<Restaurante>();
             gvRestaurantes.ClearSelection();
-        }
-        private void btNewRest_Click(object sender, EventArgs e)
-        {
-            var diag = new formNewRest(false, null, dados);
-            diag.ShowDialog();
+            if(bsBD.List.Count == 0)
+            {
+                pedidosToolStripMenuItem.Enabled = false;
+                clientesToolStripMenuItem.Enabled = false;
+                menuToolStripMenuItem.Enabled = false;
+            }
         }
         private void formBase_Activated(object sender, EventArgs e)
         {
@@ -37,38 +37,50 @@ namespace ProjectodeDA
                 Restaurante restSel = gvRestaurantes.SelectedRows[0].DataBoundItem as Restaurante;
                 if (restSel != null)
                 {
-                    tbRestSelec.Text = restSel.ToString();
-                    btEditRest.Enabled = true;
-                    btDeleteRest.Enabled = true;
+                    btEditarRest.Enabled = true;
+                    btApagarRest.Enabled = true;
+                    pedidosToolStripMenuItem.Enabled = true;
+                    clientesToolStripMenuItem.Enabled = true;
+                    menuToolStripMenuItem.Enabled = true;
                 }
                 else
                 {
-                    tbRestSelec.Text = "Nenhum";
-                    btEditRest.Enabled = false;
-                    btDeleteRest.Enabled = false;
+                    btEditarRest.Enabled = false;
+                    btApagarRest.Enabled = false;
+                    pedidosToolStripMenuItem.Enabled = false;
+                    clientesToolStripMenuItem.Enabled = false;
+                    menuToolStripMenuItem.Enabled = false;
                 }
             }
             catch (Exception ex)
             {
-                tbRestSelec.Text = "ERROR";
-                btEditRest.Enabled = false;
-                btDeleteRest.Enabled = false;
+                btEditarRest.Enabled = false;
+                btApagarRest.Enabled = false;
+                pedidosToolStripMenuItem.Enabled = false;
+                clientesToolStripMenuItem.Enabled = false;
+                menuToolStripMenuItem.Enabled = false;
             }
         }
-        private void btDeleteRest_Click(object sender, EventArgs e)
+        private void btPedidos_Click(object sender, EventArgs e)
         {
             try
             {
-                Restaurante restSel = gvRestaurantes.SelectedRows[0].DataBoundItem as Restaurante;
-                dados.Restaurantes.Remove(restSel);
-                dados.SaveChanges();
+                restSel = gvRestaurantes.SelectedRows[0].DataBoundItem as Restaurante;
+                var pedidos = new formPedidos(restSel, this, dados);
+                pedidos.Show();
+                
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                tbRestSelec.Text = "ERROR";
             }
         }
-        private void btEditRest_Click(object sender, EventArgs e)
+        private void btNovoRest_Click(object sender, EventArgs e)
+        {
+            var diag = new formNewRest(false, null, dados);
+            diag.ShowDialog();
+        }
+
+        private void btEditarRest_Click(object sender, EventArgs e)
         {
             try
             {
@@ -78,30 +90,77 @@ namespace ProjectodeDA
             }
             catch (Exception ex)
             {
-                tbRestSelec.Text = "ERROR";
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            bsBD.DataSource = dados.Restaurantes.ToList<Restaurante>();
-        }
-        private void btPedidos_Click(object sender, EventArgs e)
+        private void btApagarRest_Click(object sender, EventArgs e)
         {
             try
             {
-                restSel = gvRestaurantes.SelectedRows[0].DataBoundItem as Restaurante;
-                var pedidos = new formPedidos(restSel, this, dados);
-                pedidos.Show();
-                this.Hide();
+                Restaurante restSel = gvRestaurantes.SelectedRows[0].DataBoundItem as Restaurante;
+                dados.Restaurantes.Remove(restSel);
+                dados.SaveChanges();
+                bsBD.DataSource = dados.Restaurantes.ToList<Restaurante>();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                tbRestSelec.Text = "ERROR";
             }
         }
-        private void btMenu_Click(object sender, EventArgs e)
+        private void btRefresh_Click(object sender, EventArgs e)
         {
-
+            toolStripTextBox1.Text = null;
+            bsBD.DataSource = dados.Restaurantes.ToList<Restaurante>();
+        }
+        private void Pesquisa(string query)
+        {
+            if (query != null)
+            {
+                List<Restaurante> subLista = new List<Restaurante>();
+                foreach (Restaurante a in dados.Restaurantes.ToList<Restaurante>())
+                {
+                    if (a.Nome.Contains(query))
+                    {
+                        subLista.Add(a);
+                    }
+                }
+                bsBD.DataSource = subLista;
+            }
+            else
+            {
+                bsBD.DataSource = dados.Restaurantes.ToList<Restaurante>();
+            }
+        }
+        private void btSearch_Click(object sender, EventArgs e)
+        {
+            Pesquisa(toolStripTextBox1.Text);
+        }
+        private void restaurantesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //não faz nada no contexto
+        }
+        private void toolStripTextBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                Pesquisa(toolStripTextBox1.Text);
+            }
+        }
+        private void empregadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form gestao = new formGestaoGeral(dados, "empregados", this);
+            gestao.Show();
+            this.Hide();
+        }
+        private void itemsDeVendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form gestao = new formGestaoGeral(dados, "items", this);
+            gestao.Show();
+            this.Hide();
+        }
+        private void métodosDePagamentoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form gestao = new formGestaoGeral(dados, "pagamento", this);
+            gestao.Show();
+            this.Hide();
         }
     }
 }

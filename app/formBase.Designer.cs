@@ -31,75 +31,204 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formBase));
-            this.label1 = new System.Windows.Forms.Label();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.tbRestSelec = new System.Windows.Forms.TextBox();
-            this.btNewRest = new System.Windows.Forms.Button();
-            this.gvRestaurantes = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.restaurantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restaurantesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.empregadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemsDeVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.métodosDePagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.novoPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verPedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.novoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adicionarMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gerirMenusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsRestaurante = new System.Windows.Forms.ToolStrip();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.Morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gvRestaurantes = new System.Windows.Forms.DataGridView();
+            this.btNovoRest = new System.Windows.Forms.ToolStripButton();
+            this.btEditarRest = new System.Windows.Forms.ToolStripButton();
+            this.btApagarRest = new System.Windows.Forms.ToolStripButton();
+            this.btRefresh = new System.Windows.Forms.ToolStripButton();
+            this.btSearch = new System.Windows.Forms.ToolStripButton();
             this.bsBD = new System.Windows.Forms.BindingSource(this.components);
-            this.btEditRest = new System.Windows.Forms.Button();
-            this.btDeleteRest = new System.Windows.Forms.Button();
-            this.btRestaurantes = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btPedidos = new System.Windows.Forms.Button();
-            this.btMenu = new System.Windows.Forms.Button();
+            this.menuStrip1.SuspendLayout();
+            this.tsRestaurante.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvRestaurantes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsBD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // menuStrip1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(5, 414);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Restaurante Selecionado";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.restaurantesToolStripMenuItem,
+            this.pedidosToolStripMenuItem,
+            this.clientesToolStripMenuItem,
+            this.menuToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 12;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // splitter1
+            // restaurantesToolStripMenuItem
             // 
-            this.splitter1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.splitter1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitter1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(138, 450);
-            this.splitter1.TabIndex = 0;
-            this.splitter1.TabStop = false;
+            this.restaurantesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.restaurantesToolStripMenuItem1,
+            this.empregadosToolStripMenuItem,
+            this.itemsDeVendaToolStripMenuItem,
+            this.métodosDePagamentoToolStripMenuItem});
+            this.restaurantesToolStripMenuItem.Name = "restaurantesToolStripMenuItem";
+            this.restaurantesToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.restaurantesToolStripMenuItem.Text = "Gestão Global";
             // 
-            // tbRestSelec
+            // restaurantesToolStripMenuItem1
             // 
-            this.tbRestSelec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tbRestSelec.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbRestSelec.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tbRestSelec.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbRestSelec.Location = new System.Drawing.Point(0, 430);
-            this.tbRestSelec.Margin = new System.Windows.Forms.Padding(0);
-            this.tbRestSelec.Name = "tbRestSelec";
-            this.tbRestSelec.ReadOnly = true;
-            this.tbRestSelec.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbRestSelec.Size = new System.Drawing.Size(138, 20);
-            this.tbRestSelec.TabIndex = 3;
-            this.tbRestSelec.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.restaurantesToolStripMenuItem1.Name = "restaurantesToolStripMenuItem1";
+            this.restaurantesToolStripMenuItem1.Size = new System.Drawing.Size(201, 22);
+            this.restaurantesToolStripMenuItem1.Text = "Restaurantes";
+            this.restaurantesToolStripMenuItem1.Click += new System.EventHandler(this.restaurantesToolStripMenuItem1_Click);
             // 
-            // btNewRest
+            // empregadosToolStripMenuItem
             // 
-            this.btNewRest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btNewRest.Location = new System.Drawing.Point(144, 12);
-            this.btNewRest.Name = "btNewRest";
-            this.btNewRest.Size = new System.Drawing.Size(135, 31);
-            this.btNewRest.TabIndex = 1;
-            this.btNewRest.Text = "Novo Restaurante";
-            this.btNewRest.UseVisualStyleBackColor = true;
-            this.btNewRest.Click += new System.EventHandler(this.btNewRest_Click);
+            this.empregadosToolStripMenuItem.Name = "empregadosToolStripMenuItem";
+            this.empregadosToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.empregadosToolStripMenuItem.Text = "Empregados";
+            this.empregadosToolStripMenuItem.Click += new System.EventHandler(this.empregadosToolStripMenuItem_Click);
+            // 
+            // itemsDeVendaToolStripMenuItem
+            // 
+            this.itemsDeVendaToolStripMenuItem.Name = "itemsDeVendaToolStripMenuItem";
+            this.itemsDeVendaToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.itemsDeVendaToolStripMenuItem.Text = "Items de Venda";
+            this.itemsDeVendaToolStripMenuItem.Click += new System.EventHandler(this.itemsDeVendaToolStripMenuItem_Click);
+            // 
+            // métodosDePagamentoToolStripMenuItem
+            // 
+            this.métodosDePagamentoToolStripMenuItem.Name = "métodosDePagamentoToolStripMenuItem";
+            this.métodosDePagamentoToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.métodosDePagamentoToolStripMenuItem.Text = "Métodos de Pagamento";
+            this.métodosDePagamentoToolStripMenuItem.Click += new System.EventHandler(this.métodosDePagamentoToolStripMenuItem_Click);
+            // 
+            // pedidosToolStripMenuItem
+            // 
+            this.pedidosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.novoPedidoToolStripMenuItem,
+            this.verPedidosToolStripMenuItem});
+            this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
+            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.pedidosToolStripMenuItem.Text = "Pedidos";
+            // 
+            // novoPedidoToolStripMenuItem
+            // 
+            this.novoPedidoToolStripMenuItem.Name = "novoPedidoToolStripMenuItem";
+            this.novoPedidoToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.novoPedidoToolStripMenuItem.Text = "Novo Pedido";
+            // 
+            // verPedidosToolStripMenuItem
+            // 
+            this.verPedidosToolStripMenuItem.Name = "verPedidosToolStripMenuItem";
+            this.verPedidosToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.verPedidosToolStripMenuItem.Text = "Ver Pedidos";
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.novoClienteToolStripMenuItem,
+            this.editarClienteToolStripMenuItem});
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            // 
+            // novoClienteToolStripMenuItem
+            // 
+            this.novoClienteToolStripMenuItem.Name = "novoClienteToolStripMenuItem";
+            this.novoClienteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.novoClienteToolStripMenuItem.Text = "Novo Cliente";
+            // 
+            // editarClienteToolStripMenuItem
+            // 
+            this.editarClienteToolStripMenuItem.Name = "editarClienteToolStripMenuItem";
+            this.editarClienteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.editarClienteToolStripMenuItem.Text = "Editar Cliente";
+            // 
+            // menuToolStripMenuItem
+            // 
+            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adicionarMenuToolStripMenuItem,
+            this.gerirMenusToolStripMenuItem});
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // adicionarMenuToolStripMenuItem
+            // 
+            this.adicionarMenuToolStripMenuItem.Name = "adicionarMenuToolStripMenuItem";
+            this.adicionarMenuToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.adicionarMenuToolStripMenuItem.Text = "Adicionar Menu";
+            // 
+            // gerirMenusToolStripMenuItem
+            // 
+            this.gerirMenusToolStripMenuItem.Name = "gerirMenusToolStripMenuItem";
+            this.gerirMenusToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.gerirMenusToolStripMenuItem.Text = "Gerir Menus";
+            // 
+            // tsRestaurante
+            // 
+            this.tsRestaurante.AllowMerge = false;
+            this.tsRestaurante.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.tsRestaurante.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.tsRestaurante.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btNovoRest,
+            this.btEditarRest,
+            this.btApagarRest,
+            this.btRefresh,
+            this.btSearch,
+            this.toolStripTextBox1});
+            this.tsRestaurante.Location = new System.Drawing.Point(0, 24);
+            this.tsRestaurante.Name = "tsRestaurante";
+            this.tsRestaurante.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.tsRestaurante.Size = new System.Drawing.Size(800, 33);
+            this.tsRestaurante.TabIndex = 13;
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(150, 33);
+            this.toolStripTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.toolStripTextBox1_KeyPress);
+            // 
+            // Morada
+            // 
+            this.Morada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Morada.DataPropertyName = "Moradas";
+            this.Morada.FillWeight = 10F;
+            this.Morada.HeaderText = "Morada";
+            this.Morada.Name = "Morada";
+            this.Morada.ReadOnly = true;
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.FillWeight = 10F;
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 30;
             // 
             // gvRestaurantes
             // 
@@ -107,11 +236,9 @@
             this.gvRestaurantes.AllowUserToDeleteRows = false;
             this.gvRestaurantes.AllowUserToResizeColumns = false;
             this.gvRestaurantes.AllowUserToResizeRows = false;
-            this.gvRestaurantes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.gvRestaurantes.AutoGenerateColumns = false;
             this.gvRestaurantes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(134)))), ((int)(((byte)(131)))));
+            this.gvRestaurantes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(44)))), ((int)(((byte)(108)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
@@ -126,7 +253,8 @@
             this.Nome,
             this.Morada});
             this.gvRestaurantes.DataSource = this.bsBD;
-            this.gvRestaurantes.Location = new System.Drawing.Point(285, 0);
+            this.gvRestaurantes.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gvRestaurantes.Location = new System.Drawing.Point(0, 56);
             this.gvRestaurantes.MultiSelect = false;
             this.gvRestaurantes.Name = "gvRestaurantes";
             this.gvRestaurantes.ReadOnly = true;
@@ -134,115 +262,64 @@
             this.gvRestaurantes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gvRestaurantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvRestaurantes.ShowEditingIcon = false;
-            this.gvRestaurantes.Size = new System.Drawing.Size(515, 450);
+            this.gvRestaurantes.Size = new System.Drawing.Size(800, 394);
             this.gvRestaurantes.TabIndex = 4;
             this.gvRestaurantes.SelectionChanged += new System.EventHandler(this.gvRestaurantes_SelectionChanged);
             // 
-            // id
+            // btNovoRest
             // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 30;
+            this.btNovoRest.AutoSize = false;
+            this.btNovoRest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btNovoRest.Image = global::ProjectodeDA.Properties.Resources._new;
+            this.btNovoRest.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btNovoRest.Name = "btNovoRest";
+            this.btNovoRest.Size = new System.Drawing.Size(30, 30);
+            this.btNovoRest.Text = "Novo";
+            this.btNovoRest.Click += new System.EventHandler(this.btNovoRest_Click);
             // 
-            // Nome
+            // btEditarRest
             // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.FillWeight = 10F;
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
+            this.btEditarRest.AutoSize = false;
+            this.btEditarRest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btEditarRest.Image = global::ProjectodeDA.Properties.Resources.edit;
+            this.btEditarRest.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btEditarRest.Name = "btEditarRest";
+            this.btEditarRest.Size = new System.Drawing.Size(30, 30);
+            this.btEditarRest.Text = "Editar";
+            this.btEditarRest.Click += new System.EventHandler(this.btEditarRest_Click);
             // 
-            // Morada
+            // btApagarRest
             // 
-            this.Morada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Morada.DataPropertyName = "Moradas";
-            this.Morada.FillWeight = 10F;
-            this.Morada.HeaderText = "Morada";
-            this.Morada.Name = "Morada";
-            this.Morada.ReadOnly = true;
+            this.btApagarRest.AutoSize = false;
+            this.btApagarRest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btApagarRest.Image = global::ProjectodeDA.Properties.Resources.delete;
+            this.btApagarRest.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btApagarRest.Name = "btApagarRest";
+            this.btApagarRest.Size = new System.Drawing.Size(30, 30);
+            this.btApagarRest.Text = "Apagar";
+            this.btApagarRest.Click += new System.EventHandler(this.btApagarRest_Click);
             // 
-            // btEditRest
+            // btRefresh
             // 
-            this.btEditRest.Enabled = false;
-            this.btEditRest.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEditRest.Location = new System.Drawing.Point(144, 68);
-            this.btEditRest.Name = "btEditRest";
-            this.btEditRest.Size = new System.Drawing.Size(135, 31);
-            this.btEditRest.TabIndex = 5;
-            this.btEditRest.Text = "Editar Restaurante";
-            this.btEditRest.UseVisualStyleBackColor = true;
-            this.btEditRest.Click += new System.EventHandler(this.btEditRest_Click);
+            this.btRefresh.AutoSize = false;
+            this.btRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btRefresh.Image = global::ProjectodeDA.Properties.Resources.refresh;
+            this.btRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btRefresh.Name = "btRefresh";
+            this.btRefresh.Size = new System.Drawing.Size(30, 30);
+            this.btRefresh.Text = "Actualizar";
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
             // 
-            // btDeleteRest
+            // btSearch
             // 
-            this.btDeleteRest.Enabled = false;
-            this.btDeleteRest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDeleteRest.Location = new System.Drawing.Point(144, 121);
-            this.btDeleteRest.Name = "btDeleteRest";
-            this.btDeleteRest.Size = new System.Drawing.Size(135, 31);
-            this.btDeleteRest.TabIndex = 6;
-            this.btDeleteRest.Text = "Apagar Restaurante";
-            this.btDeleteRest.UseVisualStyleBackColor = true;
-            this.btDeleteRest.Click += new System.EventHandler(this.btDeleteRest_Click);
-            // 
-            // btRestaurantes
-            // 
-            this.btRestaurantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btRestaurantes.Location = new System.Drawing.Point(8, 12);
-            this.btRestaurantes.Name = "btRestaurantes";
-            this.btRestaurantes.Size = new System.Drawing.Size(124, 31);
-            this.btRestaurantes.TabIndex = 7;
-            this.btRestaurantes.Text = "Restaurantes";
-            this.btRestaurantes.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Image = global::ProjectodeDA.Properties.Resources.refresh;
-            this.button1.Location = new System.Drawing.Point(256, 419);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 25);
-            this.button1.TabIndex = 9;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = global::ProjectodeDA.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 301);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btPedidos
-            // 
-            this.btPedidos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPedidos.Location = new System.Drawing.Point(8, 58);
-            this.btPedidos.Name = "btPedidos";
-            this.btPedidos.Size = new System.Drawing.Size(124, 31);
-            this.btPedidos.TabIndex = 10;
-            this.btPedidos.Text = "Pedidos e Clientes";
-            this.btPedidos.UseVisualStyleBackColor = true;
-            this.btPedidos.Click += new System.EventHandler(this.btPedidos_Click);
-            // 
-            // btMenu
-            // 
-            this.btMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btMenu.Location = new System.Drawing.Point(8, 105);
-            this.btMenu.Name = "btMenu";
-            this.btMenu.Size = new System.Drawing.Size(124, 31);
-            this.btMenu.TabIndex = 11;
-            this.btMenu.Text = "Menu";
-            this.btMenu.UseVisualStyleBackColor = true;
-            this.btMenu.Click += new System.EventHandler(this.btMenu_Click);
+            this.btSearch.AutoSize = false;
+            this.btSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btSearch.Image = global::ProjectodeDA.Properties.Resources.search;
+            this.btSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btSearch.Name = "btSearch";
+            this.btSearch.Size = new System.Drawing.Size(30, 30);
+            this.btSearch.Text = "Procurar";
+            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
             // formBase
             // 
@@ -250,53 +327,60 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btMenu);
-            this.Controls.Add(this.btPedidos);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btRestaurantes);
-            this.Controls.Add(this.btDeleteRest);
-            this.Controls.Add(this.btEditRest);
+            this.Controls.Add(this.tsRestaurante);
             this.Controls.Add(this.gvRestaurantes);
-            this.Controls.Add(this.btNewRest);
-            this.Controls.Add(this.tbRestSelec);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.splitter1);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "formBase";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Restaurantes";
             this.Activated += new System.EventHandler(this.formBase_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.tsRestaurante.ResumeLayout(false);
+            this.tsRestaurante.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvRestaurantes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsBD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.TextBox tbRestSelec;
-        private System.Windows.Forms.Button btNewRest;
-        private System.Windows.Forms.DataGridView gvRestaurantes;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idMoradaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn moradasIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bsBD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem restaurantesToolStripMenuItem;
+        private System.Windows.Forms.ToolStrip tsRestaurante;
+        private System.Windows.Forms.ToolStripButton btNovoRest;
+        private System.Windows.Forms.ToolStripButton btEditarRest;
+        private System.Windows.Forms.ToolStripButton btApagarRest;
+        private System.Windows.Forms.ToolStripButton btSearch;
+        private System.Windows.Forms.ToolStripButton btRefresh;
+        private System.Windows.Forms.ToolStripMenuItem restaurantesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem empregadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem itemsDeVendaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem métodosDePagamentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Morada;
-        private System.Windows.Forms.Button btEditRest;
-        private System.Windows.Forms.Button btDeleteRest;
-        private System.Windows.Forms.Button btRestaurantes;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btPedidos;
-        private System.Windows.Forms.Button btMenu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridView gvRestaurantes;
+        private System.Windows.Forms.ToolStripMenuItem novoPedidoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verPedidosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem novoClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adicionarMenuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gerirMenusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
     }
 }
 
