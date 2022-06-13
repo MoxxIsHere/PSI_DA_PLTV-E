@@ -4,18 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="79c1691b374b4d8aaac72f06c45b8cdf" Name="Diagram1" ZoomLevel="117" >
+      <Diagram DiagramId="79c1691b374b4d8aaac72f06c45b8cdf" Name="Diagram1" ZoomLevel="100" >
         <EntityTypeShape EntityType="Model1.Restaurante" Width="1.5" PointX="5.875" PointY="3" />
         <EntityTypeShape EntityType="Model1.ItemMenu" Width="1.5" PointX="3.625" PointY="2.75" />
         <EntityTypeShape EntityType="Model1.Categoria" Width="1.5" PointX="1.375" PointY="3.25" />
         <EntityTypeShape EntityType="Model1.Pedido" Width="1.5" PointX="3.625" PointY="7" />
         <EntityTypeShape EntityType="Model1.Estado" Width="1.5" PointX="1.375" PointY="7.25" />
-        <EntityTypeShape EntityType="Model1.Cliente" Width="1.5" PointX="7.5" PointY="9.875" />
-        <EntityTypeShape EntityType="Model1.Trabalhador" Width="1.5" PointX="8.625" PointY="12.75" />
+        <EntityTypeShape EntityType="Model1.Cliente" Width="1.5" PointX="10" PointY="10.125" />
+        <EntityTypeShape EntityType="Model1.Trabalhador" Width="1.5" PointX="12.75" PointY="10.125" />
         <EntityTypeShape EntityType="Model1.Pagamento" Width="1.5" PointX="5.875" PointY="7.125" />
         <EntityTypeShape EntityType="Model1.MetodoPagamento" Width="1.5" PointX="3.625" PointY="10.125" />
         <EntityTypeShape EntityType="Model1.Morada" Width="1.5" PointX="9.875" PointY="3.25" />
-        <EntityTypeShape EntityType="Model1.Pessoa" Width="1.5" PointX="10" PointY="6.75" />
+        <EntityTypeShape EntityType="Model1.Pessoa" Width="1.5" PointX="11.5" PointY="7" />
         <AssociationConnector Association="Model1.RestauranteMorada" />
         <AssociationConnector Association="Model1.ItemMenuRestaurante" />
         <AssociationConnector Association="Model1.PedidoRestaurante" />

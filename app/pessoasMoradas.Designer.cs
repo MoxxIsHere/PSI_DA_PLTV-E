@@ -29,32 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btConfirm = new System.Windows.Forms.Button();
+            this.btNew = new System.Windows.Forms.Button();
             this.bsDB = new System.Windows.Forms.BindingSource(this.components);
             this.lbMoradas = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lbl1 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbRua = new System.Windows.Forms.TextBox();
+            this.lblRua = new System.Windows.Forms.Label();
+            this.lblCidade = new System.Windows.Forms.Label();
+            this.tbCidade = new System.Windows.Forms.TextBox();
+            this.lblCP = new System.Windows.Forms.Label();
+            this.tbCPCol1 = new System.Windows.Forms.TextBox();
+            this.tbCPCol2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblPais = new System.Windows.Forms.Label();
+            this.tbPais = new System.Windows.Forms.TextBox();
+            this.btExit = new System.Windows.Forms.Button();
+            this.btEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsDB)).BeginInit();
             this.SuspendLayout();
             // 
-            // btConfirm
+            // btNew
             // 
-            this.btConfirm.Location = new System.Drawing.Point(279, 138);
-            this.btConfirm.Name = "btConfirm";
-            this.btConfirm.Size = new System.Drawing.Size(172, 21);
-            this.btConfirm.TabIndex = 0;
-            this.btConfirm.Text = "Confirm";
-            this.btConfirm.UseVisualStyleBackColor = true;
-            this.btConfirm.Click += new System.EventHandler(this.btConfirm_Click);
+            this.btNew.Location = new System.Drawing.Point(368, 138);
+            this.btNew.Name = "btNew";
+            this.btNew.Size = new System.Drawing.Size(83, 21);
+            this.btNew.TabIndex = 0;
+            this.btNew.Text = "New";
+            this.btNew.UseVisualStyleBackColor = true;
+            this.btNew.Click += new System.EventHandler(this.btConfirm_Click);
             // 
             // lbMoradas
             // 
@@ -64,65 +65,66 @@
             this.lbMoradas.Name = "lbMoradas";
             this.lbMoradas.Size = new System.Drawing.Size(172, 134);
             this.lbMoradas.TabIndex = 1;
+            this.lbMoradas.SelectedIndexChanged += new System.EventHandler(this.lbMoradas_SelectedIndexChanged);
             // 
-            // textBox1
+            // tbRua
             // 
-            this.textBox1.Location = new System.Drawing.Point(4, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 20);
-            this.textBox1.TabIndex = 2;
+            this.tbRua.Location = new System.Drawing.Point(4, 17);
+            this.tbRua.Name = "tbRua";
+            this.tbRua.Size = new System.Drawing.Size(269, 20);
+            this.tbRua.TabIndex = 2;
             // 
-            // lbl1
+            // lblRua
             // 
-            this.lbl1.AutoSize = true;
-            this.lbl1.ForeColor = System.Drawing.SystemColors.Window;
-            this.lbl1.Location = new System.Drawing.Point(1, 1);
-            this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(27, 13);
-            this.lbl1.TabIndex = 3;
-            this.lbl1.Text = "Rua";
+            this.lblRua.AutoSize = true;
+            this.lblRua.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblRua.Location = new System.Drawing.Point(1, 1);
+            this.lblRua.Name = "lblRua";
+            this.lblRua.Size = new System.Drawing.Size(27, 13);
+            this.lblRua.TabIndex = 3;
+            this.lblRua.Text = "Rua";
             // 
-            // label1
+            // lblCidade
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.Window;
-            this.label1.Location = new System.Drawing.Point(1, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Cidade";
+            this.lblCidade.AutoSize = true;
+            this.lblCidade.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblCidade.Location = new System.Drawing.Point(1, 41);
+            this.lblCidade.Name = "lblCidade";
+            this.lblCidade.Size = new System.Drawing.Size(40, 13);
+            this.lblCidade.TabIndex = 5;
+            this.lblCidade.Text = "Cidade";
             // 
-            // textBox2
+            // tbCidade
             // 
-            this.textBox2.Location = new System.Drawing.Point(4, 57);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(269, 20);
-            this.textBox2.TabIndex = 4;
+            this.tbCidade.Location = new System.Drawing.Point(4, 57);
+            this.tbCidade.Name = "tbCidade";
+            this.tbCidade.Size = new System.Drawing.Size(269, 20);
+            this.tbCidade.TabIndex = 4;
             // 
-            // label2
+            // lblCP
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(1, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Codigo Postal";
+            this.lblCP.AutoSize = true;
+            this.lblCP.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblCP.Location = new System.Drawing.Point(1, 80);
+            this.lblCP.Name = "lblCP";
+            this.lblCP.Size = new System.Drawing.Size(72, 13);
+            this.lblCP.TabIndex = 7;
+            this.lblCP.Text = "Codigo Postal";
             // 
-            // textBox3
+            // tbCPCol1
             // 
-            this.textBox3.Location = new System.Drawing.Point(4, 96);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 6;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbCPCol1.Location = new System.Drawing.Point(4, 96);
+            this.tbCPCol1.Name = "tbCPCol1";
+            this.tbCPCol1.Size = new System.Drawing.Size(121, 20);
+            this.tbCPCol1.TabIndex = 6;
+            this.tbCPCol1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox4
+            // tbCPCol2
             // 
-            this.textBox4.Location = new System.Drawing.Point(158, 96);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(115, 20);
-            this.textBox4.TabIndex = 8;
+            this.tbCPCol2.Location = new System.Drawing.Point(158, 96);
+            this.tbCPCol2.Name = "tbCPCol2";
+            this.tbCPCol2.Size = new System.Drawing.Size(115, 20);
+            this.tbCPCol2.TabIndex = 8;
             // 
             // label3
             // 
@@ -135,56 +137,70 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "-";
             // 
-            // label4
+            // lblPais
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(1, 119);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Codigo Postal";
+            this.lblPais.AutoSize = true;
+            this.lblPais.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblPais.Location = new System.Drawing.Point(2, 118);
+            this.lblPais.Name = "lblPais";
+            this.lblPais.Size = new System.Drawing.Size(29, 13);
+            this.lblPais.TabIndex = 10;
+            this.lblPais.Text = "País";
             // 
-            // textBox5
+            // tbPais
             // 
-            this.textBox5.Location = new System.Drawing.Point(4, 139);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(269, 20);
-            this.textBox5.TabIndex = 11;
+            this.tbPais.Location = new System.Drawing.Point(5, 134);
+            this.tbPais.Name = "tbPais";
+            this.tbPais.Size = new System.Drawing.Size(269, 20);
+            this.tbPais.TabIndex = 11;
             // 
-            // button1
+            // btExit
             // 
-            this.button1.Location = new System.Drawing.Point(453, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(20, 20);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "X";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btExit.Location = new System.Drawing.Point(453, 0);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(20, 20);
+            this.btExit.TabIndex = 12;
+            this.btExit.Text = "X";
+            this.btExit.UseVisualStyleBackColor = true;
+            this.btExit.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btEdit
+            // 
+            this.btEdit.Location = new System.Drawing.Point(279, 138);
+            this.btEdit.Name = "btEdit";
+            this.btEdit.Size = new System.Drawing.Size(83, 21);
+            this.btEdit.TabIndex = 13;
+            this.btEdit.Text = "Edit / Select";
+            this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // pessoasMoradas
             // 
-            this.AcceptButton = this.btConfirm;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(474, 162);
+            this.CancelButton = this.btExit;
+            this.ClientSize = new System.Drawing.Size(474, 164);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btEdit);
+            this.Controls.Add(this.btExit);
+            this.Controls.Add(this.tbPais);
+            this.Controls.Add(this.lblPais);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.lbl1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbCPCol2);
+            this.Controls.Add(this.lblCP);
+            this.Controls.Add(this.tbCPCol1);
+            this.Controls.Add(this.lblCidade);
+            this.Controls.Add(this.tbCidade);
+            this.Controls.Add(this.lblRua);
+            this.Controls.Add(this.tbRua);
             this.Controls.Add(this.lbMoradas);
-            this.Controls.Add(this.btConfirm);
+            this.Controls.Add(this.btNew);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "pessoasMoradas";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TopMost = true;
             this.Load += new System.EventHandler(this.pessoasMoradas_Load);
@@ -196,19 +212,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btConfirm;
+        private System.Windows.Forms.Button btNew;
         private System.Windows.Forms.BindingSource bsDB;
         private System.Windows.Forms.ListBox lbMoradas;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tbRua;
+        private System.Windows.Forms.Label lblRua;
+        private System.Windows.Forms.Label lblCidade;
+        private System.Windows.Forms.TextBox tbCidade;
+        private System.Windows.Forms.Label lblCP;
+        private System.Windows.Forms.TextBox tbCPCol1;
+        private System.Windows.Forms.TextBox tbCPCol2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblPais;
+        private System.Windows.Forms.TextBox tbPais;
+        private System.Windows.Forms.Button btExit;
+        private System.Windows.Forms.Button btEdit;
     }
 }

@@ -69,18 +69,13 @@ namespace ProjectodeDA.app
         private void btNewClient_Click(object sender, EventArgs e)
         {
             gpDisplayPessoa.Text = "Novo Cliente";
-
             tbNome.ReadOnly = false;
             tbNome.Text = null;
-
             tbTelemovel.ReadOnly = false;
             tbTelemovel.Text = null;
-
             tbMorada.Text = null;
-
             tbTGasto.Text = null;
             tbTGasto.Enabled = false;
-
             tbNif.Text = null;
         }
         private void btEditClient_Click(object sender, EventArgs e)
@@ -101,15 +96,11 @@ namespace ProjectodeDA.app
                 {
                     tbNome.Text = cliente.Nome;
                     tbNome.ReadOnly = true;
-
                     tbTelemovel.Text = cliente.Telemovel;
                     tbTelemovel.ReadOnly = true;
-
                     tbMorada.Text = cliente.Moradas.ToString();
-
                     tbTGasto.Enabled = true;
                     tbTGasto.Text = Convert.ToString(cliente.TotalGasto);
-
                     tbNif.Text = cliente.NumContribuinte;
                     tbNif.ReadOnly = true;
                 }
@@ -117,16 +108,12 @@ namespace ProjectodeDA.app
                 {
                     tbNome.Text = null;
                     tbNome.ReadOnly = true;
-
                     tbTelemovel.Text = null;
                     tbTelemovel.ReadOnly = true;
-
                     tbMorada.Text = null;
                     tbNif.ReadOnly = true;
-
                     tbTGasto.Enabled = true;
                     tbTGasto.Text = null;
-
                     tbNif.Text = null;
                     tbNif.ReadOnly = true;
                 }
@@ -141,19 +128,16 @@ namespace ProjectodeDA.app
             else
             {
                 Cliente novoCliente = new Cliente();
-
                 novoCliente.Nome = tbNome.Text;
-
                 novoCliente.Telemovel = tbTelemovel.Text;
-
-                //novoCliente.Moradas = tbMorada.Text;
-
+                //novoCliente.Moradas = ;
                 novoCliente.NumContribuinte = tbNif.Text;
             }
         }
         private void btMoradas_Click(object sender, EventArgs e)
         {
             var selMorada = new pessoasMoradas(tbMorada, dados);
+            selMorada.ShowDialog();
         }
     }
 }

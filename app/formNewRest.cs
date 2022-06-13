@@ -63,7 +63,7 @@ namespace ProjectodeDA.app
         }
         private bool CheckFilled()
         {
-            if ((tbCidade.Text.Length > 0) && (tbCodigoPostalCol1.Text.Length > 0) && (tbCodigoPostalCol2.Text.Length > 0) && (tbNome.Text.Length > 0) && (tbRua.Text.Length > 0))
+            if ((tbCidade.Text.Length > 0) && (tbCodigoPostalCol1.Text.Length > 0) && (tbCodigoPostalCol2.Text.Length > 0) && (tbNome.Text.Length > 0) && (tbRua.Text.Length > 0) && (tbPais.Text.Length >0))
                 return true;
             else
                 return false;
