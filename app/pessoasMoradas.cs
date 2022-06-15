@@ -8,11 +8,13 @@ namespace ProjectodeDA.app
         private TextBox content;
         private Model1Container dados;
         private Morada morada;
+        private Morada returnMorada;
         public pessoasMoradas(TextBox textBox, Model1Container crossDB)
         {
             InitializeComponent();
             content = textBox;
             dados = crossDB;
+            returnMorada = morada;
         }
         private void pessoasMoradas_Load(object sender, EventArgs e)
         {
@@ -36,6 +38,7 @@ namespace ProjectodeDA.app
                     dados.Moradas.Add(novMorada);
                     dados.SaveChanges();
                     content.Text = novMorada.ToString();
+                    returnMorada = morada;
                     this.Dispose();
                 }
                 catch (Exception ex)
@@ -86,6 +89,7 @@ namespace ProjectodeDA.app
                     }
                 }
                 content.Text = morada.ToString();
+                returnMorada = morada;
                 this.Dispose();
             }
             else

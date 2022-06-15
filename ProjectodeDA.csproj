@@ -59,6 +59,7 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceProcess" />
@@ -92,11 +93,11 @@
     <Compile Include="app\formNewRest.Designer.cs">
       <DependentUpon>formNewRest.cs</DependentUpon>
     </Compile>
-    <Compile Include="app\formPedidos.cs">
+    <Compile Include="app\formNewWorker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="app\formPedidos.Designer.cs">
-      <DependentUpon>formPedidos.cs</DependentUpon>
+    <Compile Include="app\formNewWorker.Designer.cs">
+      <DependentUpon>formNewWorker.cs</DependentUpon>
     </Compile>
     <Compile Include="app\pessoasMoradas.cs">
       <SubType>Form</SubType>
@@ -165,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="app\formNewRest.resx">
       <DependentUpon>formNewRest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="app\formNewWorker.resx">
+      <DependentUpon>formNewWorker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="app\pessoasMoradas.resx">
       <DependentUpon>pessoasMoradas.cs</DependentUpon>

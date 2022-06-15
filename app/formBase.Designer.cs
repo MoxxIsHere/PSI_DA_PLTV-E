@@ -47,16 +47,16 @@
             this.adicionarMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerirMenusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsRestaurante = new System.Windows.Forms.ToolStrip();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.Morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gvRestaurantes = new System.Windows.Forms.DataGridView();
             this.btNovoRest = new System.Windows.Forms.ToolStripButton();
             this.btEditarRest = new System.Windows.Forms.ToolStripButton();
             this.btApagarRest = new System.Windows.Forms.ToolStripButton();
             this.btRefresh = new System.Windows.Forms.ToolStripButton();
             this.btSearch = new System.Windows.Forms.ToolStripButton();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.Morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gvRestaurantes = new System.Windows.Forms.DataGridView();
             this.bsBD = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.tsRestaurante.SuspendLayout();
@@ -66,6 +66,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.AllowMerge = false;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.restaurantesToolStripMenuItem,
             this.pedidosToolStripMenuItem,
@@ -197,75 +198,6 @@
             this.tsRestaurante.Size = new System.Drawing.Size(800, 33);
             this.tsRestaurante.TabIndex = 13;
             // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(150, 33);
-            this.toolStripTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.toolStripTextBox1_KeyPress);
-            // 
-            // Morada
-            // 
-            this.Morada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Morada.DataPropertyName = "Moradas";
-            this.Morada.FillWeight = 10F;
-            this.Morada.HeaderText = "Morada";
-            this.Morada.Name = "Morada";
-            this.Morada.ReadOnly = true;
-            // 
-            // Nome
-            // 
-            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nome.DataPropertyName = "Nome";
-            this.Nome.FillWeight = 10F;
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 30;
-            // 
-            // gvRestaurantes
-            // 
-            this.gvRestaurantes.AllowUserToAddRows = false;
-            this.gvRestaurantes.AllowUserToDeleteRows = false;
-            this.gvRestaurantes.AllowUserToResizeColumns = false;
-            this.gvRestaurantes.AllowUserToResizeRows = false;
-            this.gvRestaurantes.AutoGenerateColumns = false;
-            this.gvRestaurantes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(134)))), ((int)(((byte)(131)))));
-            this.gvRestaurantes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(44)))), ((int)(((byte)(108)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(212)))), ((int)(((byte)(124)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(105)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvRestaurantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.gvRestaurantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvRestaurantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.Nome,
-            this.Morada});
-            this.gvRestaurantes.DataSource = this.bsBD;
-            this.gvRestaurantes.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gvRestaurantes.Location = new System.Drawing.Point(0, 56);
-            this.gvRestaurantes.MultiSelect = false;
-            this.gvRestaurantes.Name = "gvRestaurantes";
-            this.gvRestaurantes.ReadOnly = true;
-            this.gvRestaurantes.RowHeadersVisible = false;
-            this.gvRestaurantes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.gvRestaurantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvRestaurantes.ShowEditingIcon = false;
-            this.gvRestaurantes.Size = new System.Drawing.Size(800, 394);
-            this.gvRestaurantes.TabIndex = 4;
-            this.gvRestaurantes.SelectionChanged += new System.EventHandler(this.gvRestaurantes_SelectionChanged);
-            // 
             // btNovoRest
             // 
             this.btNovoRest.AutoSize = false;
@@ -320,6 +252,75 @@
             this.btSearch.Size = new System.Drawing.Size(30, 30);
             this.btSearch.Text = "Procurar";
             this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(150, 33);
+            this.toolStripTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.toolStripTextBox1_KeyPress);
+            // 
+            // Morada
+            // 
+            this.Morada.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Morada.DataPropertyName = "Moradas";
+            this.Morada.FillWeight = 10F;
+            this.Morada.HeaderText = "Morada";
+            this.Morada.Name = "Morada";
+            this.Morada.ReadOnly = true;
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Nome.DataPropertyName = "Nome";
+            this.Nome.FillWeight = 10F;
+            this.Nome.HeaderText = "Nome";
+            this.Nome.Name = "Nome";
+            this.Nome.ReadOnly = true;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 30;
+            // 
+            // gvRestaurantes
+            // 
+            this.gvRestaurantes.AllowUserToAddRows = false;
+            this.gvRestaurantes.AllowUserToDeleteRows = false;
+            this.gvRestaurantes.AllowUserToResizeColumns = false;
+            this.gvRestaurantes.AllowUserToResizeRows = false;
+            this.gvRestaurantes.AutoGenerateColumns = false;
+            this.gvRestaurantes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.gvRestaurantes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(44)))), ((int)(((byte)(108)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(212)))), ((int)(((byte)(124)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(105)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvRestaurantes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gvRestaurantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvRestaurantes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.Nome,
+            this.Morada});
+            this.gvRestaurantes.DataSource = this.bsBD;
+            this.gvRestaurantes.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gvRestaurantes.Location = new System.Drawing.Point(0, 56);
+            this.gvRestaurantes.MultiSelect = false;
+            this.gvRestaurantes.Name = "gvRestaurantes";
+            this.gvRestaurantes.ReadOnly = true;
+            this.gvRestaurantes.RowHeadersVisible = false;
+            this.gvRestaurantes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.gvRestaurantes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvRestaurantes.ShowEditingIcon = false;
+            this.gvRestaurantes.Size = new System.Drawing.Size(800, 394);
+            this.gvRestaurantes.TabIndex = 4;
+            this.gvRestaurantes.SelectionChanged += new System.EventHandler(this.gvRestaurantes_SelectionChanged);
             // 
             // formBase
             // 

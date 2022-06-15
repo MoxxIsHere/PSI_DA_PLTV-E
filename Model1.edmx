@@ -156,7 +156,6 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="IdRestaurante" Type="int" Nullable="false" />
     <Property Name="Salario" Type="decimal" Nullable="false" />
     <Property Name="Posicao" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
@@ -451,7 +450,6 @@
           <NavigationProperty Name="Pedido" Relationship="Model1.PedidoCliente" FromRole="Cliente" ToRole="Pedido" />
         </EntityType>
         <EntityType Name="Trabalhador" BaseType="Model1.Pessoa">
-          <Property Name="IdRestaurante" Type="Int32" Nullable="false" />
           <Property Name="Salario" Type="Decimal" Nullable="false" />
           <Property Name="Posicao" Type="String" Nullable="false" />
           <NavigationProperty Name="Restaurante" Relationship="Model1.RestauranteTrabalhador" FromRole="Trabalhador" ToRole="Restaurante" />
@@ -625,7 +623,6 @@
       <EntityTypeMapping TypeName="IsTypeOf(Model1.Trabalhador)">
         <MappingFragment StoreEntitySet="Pessoas_Trabalhador">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="IdRestaurante" ColumnName="IdRestaurante" />
           <ScalarProperty Name="Salario" ColumnName="Salario" />
           <ScalarProperty Name="Posicao" ColumnName="Posicao" />
         </MappingFragment>

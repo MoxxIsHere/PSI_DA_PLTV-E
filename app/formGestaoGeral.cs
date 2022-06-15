@@ -30,8 +30,8 @@ namespace ProjectodeDA.app
         }
         private void formGestaoGeral_FormClosing(object sender, FormClosingEventArgs e)
         {
-            prevForm.Show();
             this.Dispose();
+            prevForm.Dispose();
         }
         private void empregadosToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
@@ -44,6 +44,16 @@ namespace ProjectodeDA.app
         private void métodosDePagamentoToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             tabsControl.SelectedTab = tabMetodosPag;
+        }
+        private void btAddEmp_Click(object sender, System.EventArgs e)
+        {
+            formNewWorker novoEmp = new formNewWorker(dados, this, false, null);
+            novoEmp.ShowDialog();
+        }
+        private void btEditEmp_Click(object sender, System.EventArgs e)
+        {
+            formNewWorker editEmp = new formNewWorker(dados, this, true, gvEmpregados.SelectedRows[0].DataBoundItem as Trabalhador);
+            editEmp.ShowDialog();
         }
     }
 }

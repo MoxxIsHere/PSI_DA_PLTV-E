@@ -14,7 +14,6 @@ namespace ProjectodeDA
     
     public partial class Trabalhador : Pessoa
     {
-        public int IdRestaurante { get; set; }
         public decimal Salario { get; set; }
         public string Posicao { get; set; }
     
