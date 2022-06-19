@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/14/2022 22:29:08
--- Generated from EDMX file: C:\Users\Botas\Desktop\DEV\ProjectodeDA\Model1.edmx
+-- Date Created: 06/19/2022 21:55:36
+-- Generated from EDMX file: C:\Users\Miguel\source\repos\MoxxIsHere\PSI_DA_PLTV-E\Model1.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [db];
+USE [dadb];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -116,7 +116,7 @@ CREATE TABLE [dbo].[ItemMenus] (
     [Nome] nvarchar(max)  NOT NULL,
     [Fotografia] nvarchar(max)  NOT NULL,
     [Ingredientes] nvarchar(max)  NOT NULL,
-    [Preco] float  NOT NULL,
+    [Preco] decimal(18,2)  NOT NULL,
     [Ativo] bit  NOT NULL,
     [Categoria_Id] int  NOT NULL
 );
@@ -133,7 +133,7 @@ GO
 -- Creating table 'Pedidos'
 CREATE TABLE [dbo].[Pedidos] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [ValorTotal] float  NOT NULL,
+    [ValorTotal] decimal(18,2)  NOT NULL,
     [Restaurantes_Id] int  NOT NULL,
     [Estado_Id] int  NOT NULL,
     [Clientes_Id] int  NOT NULL
@@ -150,7 +150,7 @@ GO
 -- Creating table 'Pagamentos'
 CREATE TABLE [dbo].[Pagamentos] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [Valor] float  NOT NULL,
+    [Valor] decimal(18,2)  NOT NULL,
     [Pedido_Id] int  NOT NULL,
     [MetodoPagamento_Id] int  NOT NULL
 );
@@ -185,7 +185,7 @@ GO
 
 -- Creating table 'Pessoas_Trabalhador'
 CREATE TABLE [dbo].[Pessoas_Trabalhador] (
-    [Salario] decimal(18,0)  NOT NULL,
+    [Salario] decimal(18,2)  NOT NULL,
     [Posicao] nvarchar(max)  NOT NULL,
     [Id] int  NOT NULL,
     [Restaurante_Id] int  NOT NULL
@@ -194,7 +194,7 @@ GO
 
 -- Creating table 'Pessoas_Cliente'
 CREATE TABLE [dbo].[Pessoas_Cliente] (
-    [TotalGasto] decimal(18,0)  NOT NULL,
+    [TotalGasto] decimal(18,2)  NOT NULL,
     [NumContribuinte] nvarchar(max)  NOT NULL,
     [Id] int  NOT NULL
 );

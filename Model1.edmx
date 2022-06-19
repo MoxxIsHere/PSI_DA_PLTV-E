@@ -87,7 +87,7 @@
     <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Fotografia" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Ingredientes" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Preco" Type="float" Nullable="false" />
+    <Property Name="Preco" Type="decimal" Nullable="false" Scale="2" />
     <Property Name="Ativo" Type="bit" Nullable="false" />
     <Property Name="Categoria_Id" Type="int" Nullable="false" />
   </EntityType>
@@ -104,7 +104,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ValorTotal" Type="float" Nullable="false" />
+    <Property Name="ValorTotal" Type="decimal" Nullable="false" Scale="2" />
     <Property Name="Restaurantes_Id" Type="int" Nullable="false" />
     <Property Name="Estado_Id" Type="int" Nullable="false" />
     <Property Name="Clientes_Id" Type="int" Nullable="false" />
@@ -121,7 +121,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Valor" Type="float" Nullable="false" />
+    <Property Name="Valor" Type="decimal" Nullable="false" Scale="2" />
     <Property Name="Pedido_Id" Type="int" Nullable="false" />
     <Property Name="MetodoPagamento_Id" Type="int" Nullable="false" />
   </EntityType>
@@ -156,7 +156,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Salario" Type="decimal" Nullable="false" />
+    <Property Name="Salario" Type="decimal" Nullable="false" Scale="2" />
     <Property Name="Posicao" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="Restaurante_Id" Type="int" Nullable="false" />
@@ -165,7 +165,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="TotalGasto" Type="decimal" Nullable="false" />
+    <Property Name="TotalGasto" Type="decimal" Nullable="false" Scale="2" />
     <Property Name="NumContribuinte" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
   </EntityType>
@@ -411,7 +411,7 @@
           <Property Name="Nome" Type="String" Nullable="false" />
           <Property Name="Fotografia" Type="String" Nullable="false" />
           <Property Name="Ingredientes" Type="String" Nullable="false" />
-          <Property Name="Preco" Type="Double" Nullable="false" />
+          <Property Name="Preco" Type="Decimal" Nullable="false" Scale="2" />
           <Property Name="Ativo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Restaurantes" Relationship="Model1.ItemMenuRestaurante" FromRole="ItemMenu" ToRole="Restaurante" />
           <NavigationProperty Name="Categoria" Relationship="Model1.CategoriaItemMenu" FromRole="ItemMenu" ToRole="Categoria" />
@@ -430,7 +430,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ValorTotal" Type="Double" Nullable="false" />
+          <Property Name="ValorTotal" Type="Decimal" Nullable="false" Scale="2" />
           <NavigationProperty Name="Restaurantes" Relationship="Model1.PedidoRestaurante" FromRole="Pedido" ToRole="Restaurante" />
           <NavigationProperty Name="Estado" Relationship="Model1.EstadoPedido" FromRole="Pedido" ToRole="Estado" />
           <NavigationProperty Name="Clientes" Relationship="Model1.PedidoCliente" FromRole="Pedido" ToRole="Cliente" />
@@ -445,12 +445,12 @@
           <NavigationProperty Name="Pedidoes" Relationship="Model1.EstadoPedido" FromRole="Estado" ToRole="Pedido" />
         </EntityType>
         <EntityType Name="Cliente" BaseType="Model1.Pessoa">
-          <Property Name="TotalGasto" Type="Decimal" Nullable="false" />
+          <Property Name="TotalGasto" Type="Decimal" Nullable="false" Scale="2" />
           <Property Name="NumContribuinte" Type="String" Nullable="false" />
           <NavigationProperty Name="Pedido" Relationship="Model1.PedidoCliente" FromRole="Cliente" ToRole="Pedido" />
         </EntityType>
         <EntityType Name="Trabalhador" BaseType="Model1.Pessoa">
-          <Property Name="Salario" Type="Decimal" Nullable="false" />
+          <Property Name="Salario" Type="Decimal" Nullable="false" Scale="2" />
           <Property Name="Posicao" Type="String" Nullable="false" />
           <NavigationProperty Name="Restaurante" Relationship="Model1.RestauranteTrabalhador" FromRole="Trabalhador" ToRole="Restaurante" />
         </EntityType>
@@ -459,7 +459,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Valor" Type="Double" Nullable="false" />
+          <Property Name="Valor" Type="Decimal" Nullable="false" Scale="2" />
           <NavigationProperty Name="Pedido" Relationship="Model1.PedidoPagamento" FromRole="Pagamento" ToRole="Pedido" />
           <NavigationProperty Name="MetodoPagamento" Relationship="Model1.MetodoPagamentoPagamento" FromRole="Pagamento" ToRole="MetodoPagamento" />
         </EntityType>

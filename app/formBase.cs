@@ -66,9 +66,6 @@ namespace ProjectodeDA
             try
             {
                 restSel = gvRestaurantes.SelectedRows[0].DataBoundItem as Restaurante;
-                var pedidos = new formPedidos(restSel, this, dados);
-                pedidos.Show();
-                
             }
             catch(Exception ex)
             {
@@ -161,6 +158,10 @@ namespace ProjectodeDA
             Form gestao = new formGestaoGeral(dados, "pagamento", this);
             gestao.Show();
             this.Hide();
+        }
+        private void gvRestaurantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

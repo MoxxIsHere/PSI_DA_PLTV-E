@@ -21,7 +21,7 @@ namespace ProjectodeDA
         }
     
         public int Id { get; set; }
-        public double ValorTotal { get; set; }
+        public decimal ValorTotal { get; set; }
     
         public virtual Restaurante Restaurantes { get; set; }
         public virtual Estado Estado { get; set; }

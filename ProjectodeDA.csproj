@@ -81,11 +81,23 @@
     <Compile Include="app\formBase.Designer.cs">
       <DependentUpon>formBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="app\formCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="app\formCategorias.Designer.cs">
+      <DependentUpon>formCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="app\formGestaoGeral.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="app\formGestaoGeral.Designer.cs">
       <DependentUpon>formGestaoGeral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="app\formNewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="app\formNewItem.Designer.cs">
+      <DependentUpon>formNewItem.cs</DependentUpon>
     </Compile>
     <Compile Include="app\formNewRest.cs">
       <SubType>Form</SubType>
@@ -99,12 +111,6 @@
     <Compile Include="app\formNewWorker.Designer.cs">
       <DependentUpon>formNewWorker.cs</DependentUpon>
     </Compile>
-    <Compile Include="app\pessoasMoradas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="app\pessoasMoradas.Designer.cs">
-      <DependentUpon>pessoasMoradas.cs</DependentUpon>
-    </Compile>
     <Compile Include="app\Program.cs" />
     <Compile Include="Categoria.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -114,6 +120,12 @@
     </Compile>
     <Compile Include="Estado.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="app\formNewMetodoPag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="app\formNewMetodoPag.Designer.cs">
+      <DependentUpon>formNewMetodoPag.cs</DependentUpon>
     </Compile>
     <Compile Include="ItemMenu.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -161,8 +173,14 @@
     <EmbeddedResource Include="app\formBase.resx">
       <DependentUpon>formBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="app\formCategorias.resx">
+      <DependentUpon>formCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="app\formGestaoGeral.resx">
       <DependentUpon>formGestaoGeral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="app\formNewItem.resx">
+      <DependentUpon>formNewItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="app\formNewRest.resx">
       <DependentUpon>formNewRest.cs</DependentUpon>
@@ -170,8 +188,8 @@
     <EmbeddedResource Include="app\formNewWorker.resx">
       <DependentUpon>formNewWorker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="app\pessoasMoradas.resx">
-      <DependentUpon>pessoasMoradas.cs</DependentUpon>
+    <EmbeddedResource Include="app\formNewMetodoPag.resx">
+      <DependentUpon>formNewMetodoPag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

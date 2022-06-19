@@ -15,7 +15,7 @@ namespace ProjectodeDA
     public partial class Pagamento
     {
         public int Id { get; set; }
-        public double Valor { get; set; }
+        public decimal Valor { get; set; }
     
         public virtual Pedido Pedido { get; set; }
         public virtual MetodoPagamento MetodoPagamento { get; set; }

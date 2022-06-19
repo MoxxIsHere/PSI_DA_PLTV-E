@@ -320,6 +320,7 @@
             this.gvRestaurantes.ShowEditingIcon = false;
             this.gvRestaurantes.Size = new System.Drawing.Size(800, 394);
             this.gvRestaurantes.TabIndex = 4;
+            this.gvRestaurantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvRestaurantes_CellContentClick);
             this.gvRestaurantes.SelectionChanged += new System.EventHandler(this.gvRestaurantes_SelectionChanged);
             // 
             // formBase
