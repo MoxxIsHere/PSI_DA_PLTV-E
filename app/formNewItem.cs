@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-
 namespace ProjectodeDA.app
 {
     public partial class formNewItem : Form
@@ -45,7 +44,7 @@ namespace ProjectodeDA.app
         {
             if (EditStatus)
             {
-                if (CheckFilled())
+                if (CheckFilled() && readBytes != null)
                 {
                     editItem.Nome = tbNome.Text;
                     editItem.Ingredientes = tbIngred.Text;
@@ -53,25 +52,29 @@ namespace ProjectodeDA.app
                     editItem.Ativo = cbAtivo.Checked;
                     if (originalImage != chosenImage)
                     {
-                        editItem.Fotografia = Convert.ToBase64String(readBytes);
+                        string fotoBytes = Convert.ToBase64String(readBytes);
+                        editItem.Fotografia = fotoBytes;
                     }
                     editItem.Categoria = dataGridView1.SelectedRows[0].DataBoundItem as Categoria;
                     dados.SaveChanges();
+                    this.Dispose();
                 }
             }
             else
             {
-                if (CheckFilled())
+                if (CheckFilled() && readBytes != null)
                 {
                     ItemMenu item = new ItemMenu();
                     item.Nome = tbNome.Text;
-                    item.Fotografia = Convert.ToBase64String(readBytes);
+                    string fotoBytes = Convert.ToBase64String(readBytes);
+                    item.Fotografia = fotoBytes;
                     item.Ingredientes = tbIngred.Text;
                     item.Preco = tbPreco.Value;
                     item.Ativo = cbAtivo.Checked;
                     item.Categoria = dataGridView1.SelectedRows[0].DataBoundItem as Categoria;
                     dados.ItemMenus.Add(item);
                     dados.SaveChanges();
+                    this.Dispose();
                 }
             }
         }
@@ -86,6 +89,7 @@ namespace ProjectodeDA.app
             {
                 MemoryStream ims = new MemoryStream(Convert.FromBase64String(editItem.Fotografia));
                 originalImage = Image.FromStream(ims);
+                chosenImage = originalImage;
                 pictureBox1.Image = originalImage;
                 tbNome.Text = editItem.Nome;
                 tbIngred.Text = editItem.Ingredientes;

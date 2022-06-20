@@ -32,8 +32,8 @@ namespace ProjectodeDA.app
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             dados.Categorias.Remove(dataGridView1.SelectedRows[0].DataBoundItem as Categoria);
+            dados.SaveChanges();
             bsCategorias.DataSource = dados.Categorias.ToList<Categoria>();
-            dataGridView1.Refresh();
         }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {

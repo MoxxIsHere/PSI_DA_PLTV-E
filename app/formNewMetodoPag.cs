@@ -32,6 +32,7 @@ namespace ProjectodeDA
                         dados.MetodosPagamento.Add(metodo);
                         dados.SaveChanges();
                 }
+                this.Dispose();
             }
         }
         private void btCancel_Click(object sender, EventArgs e)

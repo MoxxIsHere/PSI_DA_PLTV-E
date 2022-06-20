@@ -1,6 +1,9 @@
 ﻿using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
+using System.Drawing;
+using System.IO;
+using System;
 namespace ProjectodeDA.app
 {
     public partial class formGestaoGeral : Form
@@ -32,27 +35,10 @@ namespace ProjectodeDA.app
                     break;
             }
         }
-        private void restaurantesToolStripMenuItem1_Click(object sender, System.EventArgs e)
+        private void formGestaoGeral_FormClosing(object sender, FormClosingEventArgs e)
         {
             prevForm.Show();
             this.Dispose();
-        }
-        private void formGestaoGeral_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Dispose();
-            prevForm.Dispose();
-        }
-        private void empregadosToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            tabsControl.SelectedTab = tabEmpregados;
-        }
-        private void itemsDeVendaToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            tabsControl.SelectedTab = tabMenuItems;
-        }
-        private void métodosDePagamentoToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            tabsControl.SelectedTab = tabMetodosPag;
         }
         //Empregados
         private void btAddEmp_Click(object sender, System.EventArgs e)
@@ -74,6 +60,8 @@ namespace ProjectodeDA.app
             }
             bsEmpregados.DataSource = empregados;
             gvEmpregados.DataSource = bsEmpregados;
+            bsMetodos.DataSource = dados.MetodosPagamento.ToList<MetodoPagamento>();
+            bsItems.DataSource = dados.ItemMenus.ToList<ItemMenu>();
         }
         private void btActEmp_Click(object sender, System.EventArgs e)
         {
@@ -151,6 +139,8 @@ namespace ProjectodeDA.app
         private void toolStripButton3_Click(object sender, System.EventArgs e)
         {
             dados.MetodosPagamento.Remove(gvMetodos.SelectedRows[0].DataBoundItem as MetodoPagamento);
+            dados.SaveChanges();
+            bsMetodos.DataSource = dados.MetodosPagamento.ToList<MetodoPagamento>();
         }
         private void toolStripButton4_Click(object sender, System.EventArgs e)
         {
@@ -200,63 +190,96 @@ namespace ProjectodeDA.app
         }
         private void toolStripButton7_Click(object sender, System.EventArgs e)
         {
-
+            formNewItem newItem = new formNewItem(dados, true, gvItems.SelectedRows[0].DataBoundItem as ItemMenu);
+            newItem.ShowDialog();
         }
         private void toolStripButton8_Click(object sender, System.EventArgs e)
         {
-
-        }
-        private void toolStripComboBox1_SelectedIndexChanged(object sender, System.EventArgs e)
-        {
-            List<ItemMenu> itemsCategoriaEscolhida = new List<ItemMenu>();
-            if(toolStripComboBox1.Text == "Todas")
-            {
-                bsItems.DataSource = dados.ItemMenus.ToList<ItemMenu>();
-            }
-            else
-            {
-                foreach(ItemMenu im in dados.ItemMenus.ToList<ItemMenu>())
-                {
-                    if(im.Categoria == toolStripComboBox1.SelectedItem)
-                    {
-                        itemsCategoriaEscolhida.Add(im); //PRECISO DE IR BUSCAR TUDO E METER MANUALMENTE E ACHO QUE A FOTO NÃO ESTA A GRAVAR NOS ITEM MENU
-                    }
-                }
-                bsItems.DataSource = itemsCategoriaEscolhida;
-            }
+            dados.ItemMenus.Remove(gvItems.SelectedRows[0].DataBoundItem as ItemMenu);
+            dados.SaveChanges();
+            bsItems.DataSource = dados.ItemMenus.ToList<ItemMenu>();
         }
         private void tabsControl_TabIndexChanged(object sender, System.EventArgs e)
         {
             if(tabsControl.SelectedTab == tabMenuItems)
             {
-                toolStripComboBox1.Items.Add("Todas");
-                toolStripComboBox1.Text = "Todas";
-                foreach(Categoria c in dados.Categorias.ToList<Categoria>())
+                foreach (ItemMenu c in dados.ItemMenus)
                 {
-                    toolStripComboBox1.Items.Add(c);
+
                 }
             }
-            List<ItemMenu> itemsCategoriaEscolhida = new List<ItemMenu>();
-            if (toolStripComboBox1.Text == "Todas")
+        }
+        private void formGestaoGeral_Load(object sender, System.EventArgs e)
+        {
+            List<Trabalhador> empregados = new List<Trabalhador>();
+            foreach (Trabalhador pessoa in dados.Pessoas)
             {
-                bsItems.DataSource = dados.ItemMenus.ToList<ItemMenu>();
+                empregados.Add(pessoa);
+            }
+            bsEmpregados.DataSource = empregados;
+            bsMetodos.DataSource = dados.MetodosPagamento.ToList<MetodoPagamento>();
+            bsItems.DataSource = dados.ItemMenus.ToList<ItemMenu>();
+            foreach(Categoria c in dados.Categorias.ToList<Categoria>())
+            {
+                categoriasToolStripMenuItem.DropDownItems.Add(c.Nome, null);
+            }
+        }
+        private void gvItems_SelectionChanged(object sender, System.EventArgs e)
+        {
+            if(gvItems.SelectedRows.Count > 0)
+            {
+                ItemMenu selected = gvItems.SelectedRows[0].DataBoundItem as ItemMenu;
+                byte[] imagem = Convert.FromBase64String(selected.Fotografia);
+                MemoryStream ms = new MemoryStream(imagem);
+                pictureBox1.Image = Image.FromStream(ms);
+                richTextBox1.Text = selected.Ingredientes;
             }
             else
             {
-                foreach (ItemMenu im in dados.ItemMenus.ToList<ItemMenu>())
-                {
-                    if (im.Categoria == toolStripComboBox1.SelectedItem)
-                    {
-                        itemsCategoriaEscolhida.Add(im);
-                    }
-                }
-                bsItems.DataSource = itemsCategoriaEscolhida;
+                pictureBox1.Image = null;
+                richTextBox1.Text = null;
             }
         }
-        private void toolStripButton9_Click(object sender, System.EventArgs e)
+        private void gerirCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formCategorias catsd = new formCategorias(dados);
             catsd.ShowDialog();
+        }
+        private void todasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bsItems.DataSource = dados.ItemMenus.ToList<ItemMenu>();
+        }
+        private void categoriasToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            if (e.ClickedItem.Text != "Todas")
+            {
+                List<ItemMenu> categorisedItems = new List<ItemMenu>();
+                foreach (ItemMenu c in dados.ItemMenus.ToList<ItemMenu>())
+                {
+                    if (e.ClickedItem.Text == c.Categoria.ToString())
+                    {
+                        categorisedItems.Add(c);
+                    }
+                }
+                bsItems.DataSource = categorisedItems;
+            }
+        }
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            tabsControl.SelectedTab = tabMetodosPag;
+        }
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            tabsControl.SelectedTab = tabMenuItems;
+        }
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            tabsControl.SelectedTab = tabEmpregados;
+        }
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            prevForm.Show();
+            this.Dispose();
         }
     }
 }

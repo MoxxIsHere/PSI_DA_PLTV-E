@@ -93,6 +93,12 @@
     <Compile Include="app\formGestaoGeral.Designer.cs">
       <DependentUpon>formGestaoGeral.cs</DependentUpon>
     </Compile>
+    <Compile Include="app\formIndividuais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="app\formIndividuais.Designer.cs">
+      <DependentUpon>formIndividuais.cs</DependentUpon>
+    </Compile>
     <Compile Include="app\formNewItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,8 @@
     <Compile Include="Pagamento.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="partials\Categoria%28partial%29.cs" />
+    <Compile Include="partials\ItemMenu%28partial%29.cs" />
     <Compile Include="partials\Pessoa%28partial%29.cs" />
     <Compile Include="partials\Restaurante%28partial%29.cs" />
     <Compile Include="partials\Morada%28partial%29.cs" />
@@ -178,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="app\formGestaoGeral.resx">
       <DependentUpon>formGestaoGeral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="app\formIndividuais.resx">
+      <DependentUpon>formIndividuais.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="app\formNewItem.resx">
       <DependentUpon>formNewItem.cs</DependentUpon>
@@ -231,6 +242,7 @@
   <ItemGroup>
     <None Include="docs\edit.png" />
     <None Include="docs\delete.png" />
+    <None Include="docs\check.png" />
     <Content Include="docs\index.html" />
     <None Include="docs\logo.png" />
     <Content Include="docs\logo.ico" />

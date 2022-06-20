@@ -30,23 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formGestaoGeral));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.restaurantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.restaurantesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.empregadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemsDeVendaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.métodosDePagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.novoPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verPedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.novoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adicionarMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gerirMenusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabsControl = new System.Windows.Forms.TabControl();
             this.tabEmpregados = new System.Windows.Forms.TabPage();
             this.gvEmpregados = new System.Windows.Forms.DataGridView();
@@ -65,14 +52,10 @@
             this.btProcEmp = new System.Windows.Forms.ToolStripButton();
             this.tbPesqEmp = new System.Windows.Forms.ToolStripTextBox();
             this.tabMenuItems = new System.Windows.Forms.TabPage();
-            this.lbItems = new System.Windows.Forms.ListView();
             this.toolsItems = new System.Windows.Forms.ToolStrip();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.tabMetodosPag = new System.Windows.Forms.TabPage();
             this.toolsMetodos = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -87,6 +70,21 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsMetodos = new System.Windows.Forms.BindingSource(this.components);
             this.bsItems = new System.Windows.Forms.BindingSource(this.components);
+            this.gvItems = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.todasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gerirCategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabsControl.SuspendLayout();
             this.tabEmpregados.SuspendLayout();
@@ -100,123 +98,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvMetodos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMetodos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.AllowMerge = false;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.restaurantesToolStripMenuItem,
-            this.pedidosToolStripMenuItem,
-            this.clientesToolStripMenuItem,
-            this.menuToolStripMenuItem});
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem4});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // restaurantesToolStripMenuItem
-            // 
-            this.restaurantesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.restaurantesToolStripMenuItem1,
-            this.empregadosToolStripMenuItem,
-            this.itemsDeVendaToolStripMenuItem,
-            this.métodosDePagamentoToolStripMenuItem});
-            this.restaurantesToolStripMenuItem.Name = "restaurantesToolStripMenuItem";
-            this.restaurantesToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
-            this.restaurantesToolStripMenuItem.Text = "Gestão Global";
-            // 
-            // restaurantesToolStripMenuItem1
-            // 
-            this.restaurantesToolStripMenuItem1.Name = "restaurantesToolStripMenuItem1";
-            this.restaurantesToolStripMenuItem1.Size = new System.Drawing.Size(201, 22);
-            this.restaurantesToolStripMenuItem1.Text = "Restaurantes";
-            this.restaurantesToolStripMenuItem1.Click += new System.EventHandler(this.restaurantesToolStripMenuItem1_Click);
-            // 
-            // empregadosToolStripMenuItem
-            // 
-            this.empregadosToolStripMenuItem.Name = "empregadosToolStripMenuItem";
-            this.empregadosToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.empregadosToolStripMenuItem.Text = "Empregados";
-            this.empregadosToolStripMenuItem.Click += new System.EventHandler(this.empregadosToolStripMenuItem_Click);
-            // 
-            // itemsDeVendaToolStripMenuItem
-            // 
-            this.itemsDeVendaToolStripMenuItem.Name = "itemsDeVendaToolStripMenuItem";
-            this.itemsDeVendaToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.itemsDeVendaToolStripMenuItem.Text = "Items de Venda";
-            this.itemsDeVendaToolStripMenuItem.Click += new System.EventHandler(this.itemsDeVendaToolStripMenuItem_Click);
-            // 
-            // métodosDePagamentoToolStripMenuItem
-            // 
-            this.métodosDePagamentoToolStripMenuItem.Name = "métodosDePagamentoToolStripMenuItem";
-            this.métodosDePagamentoToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
-            this.métodosDePagamentoToolStripMenuItem.Text = "Métodos de Pagamento";
-            this.métodosDePagamentoToolStripMenuItem.Click += new System.EventHandler(this.métodosDePagamentoToolStripMenuItem_Click);
-            // 
-            // pedidosToolStripMenuItem
-            // 
-            this.pedidosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.novoPedidoToolStripMenuItem,
-            this.verPedidosToolStripMenuItem});
-            this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.pedidosToolStripMenuItem.Text = "Pedidos";
-            // 
-            // novoPedidoToolStripMenuItem
-            // 
-            this.novoPedidoToolStripMenuItem.Name = "novoPedidoToolStripMenuItem";
-            this.novoPedidoToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.novoPedidoToolStripMenuItem.Text = "Novo Pedido";
-            // 
-            // verPedidosToolStripMenuItem
-            // 
-            this.verPedidosToolStripMenuItem.Name = "verPedidosToolStripMenuItem";
-            this.verPedidosToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.verPedidosToolStripMenuItem.Text = "Ver Pedidos";
-            // 
-            // clientesToolStripMenuItem
-            // 
-            this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.novoClienteToolStripMenuItem,
-            this.editarClienteToolStripMenuItem});
-            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.clientesToolStripMenuItem.Text = "Clientes";
-            // 
-            // novoClienteToolStripMenuItem
-            // 
-            this.novoClienteToolStripMenuItem.Name = "novoClienteToolStripMenuItem";
-            this.novoClienteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.novoClienteToolStripMenuItem.Text = "Novo Cliente";
-            // 
-            // editarClienteToolStripMenuItem
-            // 
-            this.editarClienteToolStripMenuItem.Name = "editarClienteToolStripMenuItem";
-            this.editarClienteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.editarClienteToolStripMenuItem.Text = "Editar Cliente";
-            // 
-            // menuToolStripMenuItem
-            // 
-            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adicionarMenuToolStripMenuItem,
-            this.gerirMenusToolStripMenuItem});
-            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-            this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.menuToolStripMenuItem.Text = "Menu";
-            // 
-            // adicionarMenuToolStripMenuItem
-            // 
-            this.adicionarMenuToolStripMenuItem.Name = "adicionarMenuToolStripMenuItem";
-            this.adicionarMenuToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.adicionarMenuToolStripMenuItem.Text = "Adicionar Menu";
-            // 
-            // gerirMenusToolStripMenuItem
-            // 
-            this.gerirMenusToolStripMenuItem.Name = "gerirMenusToolStripMenuItem";
-            this.gerirMenusToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.gerirMenusToolStripMenuItem.Text = "Gerir Menus";
             // 
             // tabsControl
             // 
@@ -252,6 +150,9 @@
             this.gvEmpregados.AllowUserToDeleteRows = false;
             this.gvEmpregados.AllowUserToResizeColumns = false;
             this.gvEmpregados.AllowUserToResizeRows = false;
+            this.gvEmpregados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gvEmpregados.AutoGenerateColumns = false;
             this.gvEmpregados.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.gvEmpregados.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -272,8 +173,7 @@
             this.Posicao,
             this.Restaurante});
             this.gvEmpregados.DataSource = this.bsEmpregados;
-            this.gvEmpregados.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gvEmpregados.Location = new System.Drawing.Point(3, 37);
+            this.gvEmpregados.Location = new System.Drawing.Point(3, 35);
             this.gvEmpregados.MultiSelect = false;
             this.gvEmpregados.Name = "gvEmpregados";
             this.gvEmpregados.ReadOnly = true;
@@ -281,7 +181,7 @@
             this.gvEmpregados.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gvEmpregados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvEmpregados.ShowEditingIcon = false;
-            this.gvEmpregados.Size = new System.Drawing.Size(786, 360);
+            this.gvEmpregados.Size = new System.Drawing.Size(786, 362);
             this.gvEmpregados.TabIndex = 5;
             // 
             // id
@@ -419,7 +319,10 @@
             // tabMenuItems
             // 
             this.tabMenuItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
-            this.tabMenuItems.Controls.Add(this.lbItems);
+            this.tabMenuItems.Controls.Add(this.label1);
+            this.tabMenuItems.Controls.Add(this.richTextBox1);
+            this.tabMenuItems.Controls.Add(this.pictureBox1);
+            this.tabMenuItems.Controls.Add(this.gvItems);
             this.tabMenuItems.Controls.Add(this.toolsItems);
             this.tabMenuItems.Location = new System.Drawing.Point(4, 22);
             this.tabMenuItems.Name = "tabMenuItems";
@@ -427,16 +330,6 @@
             this.tabMenuItems.Size = new System.Drawing.Size(792, 400);
             this.tabMenuItems.TabIndex = 1;
             this.tabMenuItems.Text = "Items";
-            // 
-            // lbItems
-            // 
-            this.lbItems.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lbItems.HideSelection = false;
-            this.lbItems.Location = new System.Drawing.Point(3, 38);
-            this.lbItems.Name = "lbItems";
-            this.lbItems.Size = new System.Drawing.Size(786, 359);
-            this.lbItems.TabIndex = 9;
-            this.lbItems.UseCompatibleStateImageBehavior = false;
             // 
             // toolsItems
             // 
@@ -446,9 +339,7 @@
             this.toolStripButton6,
             this.toolStripButton7,
             this.toolStripButton8,
-            this.toolStripLabel1,
-            this.toolStripComboBox1,
-            this.toolStripButton9});
+            this.toolStripSplitButton1});
             this.toolsItems.Location = new System.Drawing.Point(3, 3);
             this.toolsItems.Name = "toolsItems";
             this.toolsItems.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
@@ -487,31 +378,6 @@
             this.toolStripButton8.Size = new System.Drawing.Size(30, 30);
             this.toolStripButton8.Text = "Apagar";
             this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.BackColor = System.Drawing.SystemColors.Control;
-            this.toolStripLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(63, 30);
-            this.toolStripLabel1.Text = "Categorias";
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.MergeAction = System.Windows.Forms.MergeAction.Insert;
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 33);
-            this.toolStripComboBox1.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox1_SelectedIndexChanged);
-            // 
-            // toolStripButton9
-            // 
-            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton9.Image = global::ProjectodeDA.Properties.Resources.edit;
-            this.toolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton9.Name = "toolStripButton9";
-            this.toolStripButton9.Size = new System.Drawing.Size(23, 30);
-            this.toolStripButton9.Text = "Gerir Categorias";
-            this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
             // 
             // tabMetodosPag
             // 
@@ -609,25 +475,27 @@
             this.gvMetodos.AllowUserToDeleteRows = false;
             this.gvMetodos.AllowUserToResizeColumns = false;
             this.gvMetodos.AllowUserToResizeRows = false;
+            this.gvMetodos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gvMetodos.AutoGenerateColumns = false;
             this.gvMetodos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.gvMetodos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(44)))), ((int)(((byte)(108)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(212)))), ((int)(((byte)(124)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(105)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvMetodos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(44)))), ((int)(((byte)(108)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(212)))), ((int)(((byte)(124)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(105)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvMetodos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gvMetodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvMetodos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.Ativo,
             this.dataGridViewTextBoxColumn2});
             this.gvMetodos.DataSource = this.bsMetodos;
-            this.gvMetodos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gvMetodos.Location = new System.Drawing.Point(0, 34);
+            this.gvMetodos.Location = new System.Drawing.Point(0, 31);
             this.gvMetodos.MultiSelect = false;
             this.gvMetodos.Name = "gvMetodos";
             this.gvMetodos.ReadOnly = true;
@@ -635,7 +503,7 @@
             this.gvMetodos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gvMetodos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvMetodos.ShowEditingIcon = false;
-            this.gvMetodos.Size = new System.Drawing.Size(792, 366);
+            this.gvMetodos.Size = new System.Drawing.Size(792, 369);
             this.gvMetodos.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn1
@@ -664,6 +532,161 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
+            // gvItems
+            // 
+            this.gvItems.AllowUserToAddRows = false;
+            this.gvItems.AllowUserToDeleteRows = false;
+            this.gvItems.AllowUserToResizeColumns = false;
+            this.gvItems.AllowUserToResizeRows = false;
+            this.gvItems.AutoGenerateColumns = false;
+            this.gvItems.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.gvItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(44)))), ((int)(((byte)(108)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(212)))), ((int)(((byte)(124)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(105)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Activo,
+            this.dataGridViewTextBoxColumn5,
+            this.Preco});
+            this.gvItems.DataSource = this.bsItems;
+            this.gvItems.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gvItems.Location = new System.Drawing.Point(3, 36);
+            this.gvItems.MultiSelect = false;
+            this.gvItems.Name = "gvItems";
+            this.gvItems.ReadOnly = true;
+            this.gvItems.RowHeadersVisible = false;
+            this.gvItems.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.gvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gvItems.ShowEditingIcon = false;
+            this.gvItems.Size = new System.Drawing.Size(534, 361);
+            this.gvItems.TabIndex = 9;
+            this.gvItems.SelectionChanged += new System.EventHandler(this.gvItems_SelectionChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Location = new System.Drawing.Point(539, 39);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 250);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(539, 304);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(250, 93);
+            this.richTextBox1.TabIndex = 11;
+            this.richTextBox1.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(538, 289);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Ingredientes";
+            // 
+            // Activo
+            // 
+            this.Activo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Activo.DataPropertyName = "Ativo";
+            this.Activo.FillWeight = 10F;
+            this.Activo.HeaderText = "Activo";
+            this.Activo.Name = "Activo";
+            this.Activo.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn5.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // Preco
+            // 
+            this.Preco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Preco.DataPropertyName = "Preco";
+            this.Preco.FillWeight = 15F;
+            this.Preco.HeaderText = "Preço (€)";
+            this.Preco.Name = "Preco";
+            this.Preco.ReadOnly = true;
+            // 
+            // toolStripSplitButton1
+            // 
+            this.toolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.categoriasToolStripMenuItem,
+            this.gerirCategoriasToolStripMenuItem});
+            this.toolStripSplitButton1.Image = global::ProjectodeDA.Properties.Resources.search;
+            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
+            this.toolStripSplitButton1.Size = new System.Drawing.Size(29, 30);
+            this.toolStripSplitButton1.Text = "Categorias";
+            // 
+            // categoriasToolStripMenuItem
+            // 
+            this.categoriasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.todasToolStripMenuItem});
+            this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
+            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.categoriasToolStripMenuItem.Text = "Categorias";
+            this.categoriasToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.categoriasToolStripMenuItem_DropDownItemClicked);
+            // 
+            // todasToolStripMenuItem
+            // 
+            this.todasToolStripMenuItem.Name = "todasToolStripMenuItem";
+            this.todasToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
+            this.todasToolStripMenuItem.Text = "Todas";
+            this.todasToolStripMenuItem.Click += new System.EventHandler(this.todasToolStripMenuItem_Click);
+            // 
+            // gerirCategoriasToolStripMenuItem
+            // 
+            this.gerirCategoriasToolStripMenuItem.Name = "gerirCategoriasToolStripMenuItem";
+            this.gerirCategoriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gerirCategoriasToolStripMenuItem.Text = "Gerir Categorias";
+            this.gerirCategoriasToolStripMenuItem.Click += new System.EventHandler(this.gerirCategoriasToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(86, 20);
+            this.toolStripMenuItem1.Text = "Restaurantes";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(85, 20);
+            this.toolStripMenuItem2.Text = "Empregados";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(99, 20);
+            this.toolStripMenuItem3.Text = "Items de Venda";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(146, 20);
+            this.toolStripMenuItem4.Text = "Métodos de Pagamento";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            // 
             // formGestaoGeral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -677,6 +700,7 @@
             this.Text = "Gestão Global";
             this.Activated += new System.EventHandler(this.formGestaoGeral_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formGestaoGeral_FormClosing);
+            this.Load += new System.EventHandler(this.formGestaoGeral_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabsControl.ResumeLayout(false);
@@ -697,6 +721,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvMetodos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMetodos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -705,20 +731,6 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem restaurantesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem restaurantesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem empregadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem itemsDeVendaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem métodosDePagamentoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem novoPedidoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verPedidosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem novoClienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editarClienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem adicionarMenuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gerirMenusToolStripMenuItem;
         private System.Windows.Forms.TabControl tabsControl;
         private System.Windows.Forms.TabPage tabEmpregados;
         private System.Windows.Forms.TabPage tabMenuItems;
@@ -754,10 +766,21 @@
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripButton toolStripButton8;
-        private System.Windows.Forms.ListView lbItems;
         private System.Windows.Forms.BindingSource bsItems;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
-        private System.Windows.Forms.ToolStripButton toolStripButton9;
+        private System.Windows.Forms.DataGridView gvItems;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Activo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Preco;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripSplitButton1;
+        private System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem todasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gerirCategoriasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
     }
 }

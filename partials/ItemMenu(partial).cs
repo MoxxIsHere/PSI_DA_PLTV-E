@@ -1,6 +1,6 @@
 ﻿namespace ProjectodeDA
 {
-    public partial class Restaurante
+    public partial class ItemMenu
     {
         public override string ToString()
         {

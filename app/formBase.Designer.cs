@@ -47,16 +47,16 @@
             this.adicionarMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gerirMenusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsRestaurante = new System.Windows.Forms.ToolStrip();
-            this.btNovoRest = new System.Windows.Forms.ToolStripButton();
-            this.btEditarRest = new System.Windows.Forms.ToolStripButton();
-            this.btApagarRest = new System.Windows.Forms.ToolStripButton();
-            this.btRefresh = new System.Windows.Forms.ToolStripButton();
-            this.btSearch = new System.Windows.Forms.ToolStripButton();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.Morada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gvRestaurantes = new System.Windows.Forms.DataGridView();
+            this.btNovoRest = new System.Windows.Forms.ToolStripButton();
+            this.btEditarRest = new System.Windows.Forms.ToolStripButton();
+            this.btApagarRest = new System.Windows.Forms.ToolStripButton();
+            this.btRefresh = new System.Windows.Forms.ToolStripButton();
+            this.btSearch = new System.Windows.Forms.ToolStripButton();
             this.bsBD = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.tsRestaurante.SuspendLayout();
@@ -122,6 +122,7 @@
             this.pedidosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.novoPedidoToolStripMenuItem,
             this.verPedidosToolStripMenuItem});
+            this.pedidosToolStripMenuItem.Enabled = false;
             this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
             this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.pedidosToolStripMenuItem.Text = "Pedidos";
@@ -131,18 +132,21 @@
             this.novoPedidoToolStripMenuItem.Name = "novoPedidoToolStripMenuItem";
             this.novoPedidoToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.novoPedidoToolStripMenuItem.Text = "Novo Pedido";
+            this.novoPedidoToolStripMenuItem.Click += new System.EventHandler(this.novoPedidoToolStripMenuItem_Click);
             // 
             // verPedidosToolStripMenuItem
             // 
             this.verPedidosToolStripMenuItem.Name = "verPedidosToolStripMenuItem";
             this.verPedidosToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.verPedidosToolStripMenuItem.Text = "Ver Pedidos";
+            this.verPedidosToolStripMenuItem.Click += new System.EventHandler(this.verPedidosToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.novoClienteToolStripMenuItem,
             this.editarClienteToolStripMenuItem});
+            this.clientesToolStripMenuItem.Enabled = false;
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.clientesToolStripMenuItem.Text = "Clientes";
@@ -164,6 +168,7 @@
             this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.adicionarMenuToolStripMenuItem,
             this.gerirMenusToolStripMenuItem});
+            this.menuToolStripMenuItem.Enabled = false;
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
@@ -197,61 +202,6 @@
             this.tsRestaurante.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.tsRestaurante.Size = new System.Drawing.Size(800, 33);
             this.tsRestaurante.TabIndex = 13;
-            // 
-            // btNovoRest
-            // 
-            this.btNovoRest.AutoSize = false;
-            this.btNovoRest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btNovoRest.Image = global::ProjectodeDA.Properties.Resources._new;
-            this.btNovoRest.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btNovoRest.Name = "btNovoRest";
-            this.btNovoRest.Size = new System.Drawing.Size(30, 30);
-            this.btNovoRest.Text = "Novo";
-            this.btNovoRest.Click += new System.EventHandler(this.btNovoRest_Click);
-            // 
-            // btEditarRest
-            // 
-            this.btEditarRest.AutoSize = false;
-            this.btEditarRest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btEditarRest.Image = global::ProjectodeDA.Properties.Resources.edit;
-            this.btEditarRest.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btEditarRest.Name = "btEditarRest";
-            this.btEditarRest.Size = new System.Drawing.Size(30, 30);
-            this.btEditarRest.Text = "Editar";
-            this.btEditarRest.Click += new System.EventHandler(this.btEditarRest_Click);
-            // 
-            // btApagarRest
-            // 
-            this.btApagarRest.AutoSize = false;
-            this.btApagarRest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btApagarRest.Image = global::ProjectodeDA.Properties.Resources.delete;
-            this.btApagarRest.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btApagarRest.Name = "btApagarRest";
-            this.btApagarRest.Size = new System.Drawing.Size(30, 30);
-            this.btApagarRest.Text = "Apagar";
-            this.btApagarRest.Click += new System.EventHandler(this.btApagarRest_Click);
-            // 
-            // btRefresh
-            // 
-            this.btRefresh.AutoSize = false;
-            this.btRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btRefresh.Image = global::ProjectodeDA.Properties.Resources.refresh;
-            this.btRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btRefresh.Name = "btRefresh";
-            this.btRefresh.Size = new System.Drawing.Size(30, 30);
-            this.btRefresh.Text = "Actualizar";
-            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
-            // 
-            // btSearch
-            // 
-            this.btSearch.AutoSize = false;
-            this.btSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btSearch.Image = global::ProjectodeDA.Properties.Resources.search;
-            this.btSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btSearch.Name = "btSearch";
-            this.btSearch.Size = new System.Drawing.Size(30, 30);
-            this.btSearch.Text = "Procurar";
-            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
             // toolStripTextBox1
             // 
@@ -320,8 +270,63 @@
             this.gvRestaurantes.ShowEditingIcon = false;
             this.gvRestaurantes.Size = new System.Drawing.Size(800, 394);
             this.gvRestaurantes.TabIndex = 4;
-            this.gvRestaurantes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvRestaurantes_CellContentClick);
+            this.gvRestaurantes.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvRestaurantes_CellDoubleClick);
             this.gvRestaurantes.SelectionChanged += new System.EventHandler(this.gvRestaurantes_SelectionChanged);
+            // 
+            // btNovoRest
+            // 
+            this.btNovoRest.AutoSize = false;
+            this.btNovoRest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btNovoRest.Image = global::ProjectodeDA.Properties.Resources._new;
+            this.btNovoRest.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btNovoRest.Name = "btNovoRest";
+            this.btNovoRest.Size = new System.Drawing.Size(30, 30);
+            this.btNovoRest.Text = "Novo";
+            this.btNovoRest.Click += new System.EventHandler(this.btNovoRest_Click);
+            // 
+            // btEditarRest
+            // 
+            this.btEditarRest.AutoSize = false;
+            this.btEditarRest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btEditarRest.Image = global::ProjectodeDA.Properties.Resources.edit;
+            this.btEditarRest.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btEditarRest.Name = "btEditarRest";
+            this.btEditarRest.Size = new System.Drawing.Size(30, 30);
+            this.btEditarRest.Text = "Editar";
+            this.btEditarRest.Click += new System.EventHandler(this.btEditarRest_Click);
+            // 
+            // btApagarRest
+            // 
+            this.btApagarRest.AutoSize = false;
+            this.btApagarRest.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btApagarRest.Image = global::ProjectodeDA.Properties.Resources.delete;
+            this.btApagarRest.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btApagarRest.Name = "btApagarRest";
+            this.btApagarRest.Size = new System.Drawing.Size(30, 30);
+            this.btApagarRest.Text = "Apagar";
+            this.btApagarRest.Click += new System.EventHandler(this.btApagarRest_Click);
+            // 
+            // btRefresh
+            // 
+            this.btRefresh.AutoSize = false;
+            this.btRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btRefresh.Image = global::ProjectodeDA.Properties.Resources.refresh;
+            this.btRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btRefresh.Name = "btRefresh";
+            this.btRefresh.Size = new System.Drawing.Size(30, 30);
+            this.btRefresh.Text = "Actualizar";
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
+            // 
+            // btSearch
+            // 
+            this.btSearch.AutoSize = false;
+            this.btSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btSearch.Image = global::ProjectodeDA.Properties.Resources.search;
+            this.btSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btSearch.Name = "btSearch";
+            this.btSearch.Size = new System.Drawing.Size(30, 30);
+            this.btSearch.Text = "Procurar";
+            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
             // formBase
             // 

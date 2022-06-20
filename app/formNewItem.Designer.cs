@@ -40,13 +40,13 @@
             this.cbAtivo = new System.Windows.Forms.CheckBox();
             this.tbIngred = new System.Windows.Forms.RichTextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsCategorias = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.tbPreco = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCategorias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPreco)).BeginInit();
@@ -155,6 +155,14 @@
             this.dataGridView1.Size = new System.Drawing.Size(150, 130);
             this.dataGridView1.TabIndex = 12;
             // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.DataPropertyName = "Nome";
+            this.Column1.HeaderText = "Categoria";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -214,14 +222,6 @@
             this.label4.Size = new System.Drawing.Size(13, 13);
             this.label4.TabIndex = 16;
             this.label4.Text = "€";
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.DataPropertyName = "Nome";
-            this.Column1.HeaderText = "Categoria";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // formNewItem
             // 

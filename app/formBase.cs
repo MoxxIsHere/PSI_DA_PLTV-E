@@ -159,9 +159,23 @@ namespace ProjectodeDA
             gestao.Show();
             this.Hide();
         }
-        private void gvRestaurantes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void verPedidosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            formIndividuais indv = new formIndividuais(this, "vPedido", dados, gvRestaurantes.SelectedRows[0].DataBoundItem as Restaurante);
+            indv.Show();
+            this.Hide();
+        }
+        private void novoPedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formIndividuais indv = new formIndividuais(this, "nPedido", dados, gvRestaurantes.SelectedRows[0].DataBoundItem as Restaurante);
+            indv.Show();
+            this.Hide();
+        }
+        private void gvRestaurantes_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            formIndividuais indv = new formIndividuais(this, null, dados, gvRestaurantes.SelectedRows[0].DataBoundItem as Restaurante);
+            indv.Show();
+            this.Hide();
         }
     }
 }
