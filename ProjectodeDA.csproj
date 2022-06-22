@@ -105,6 +105,12 @@
     <Compile Include="app\formNewItem.Designer.cs">
       <DependentUpon>formNewItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="app\formNewPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="app\formNewPedido.Designer.cs">
+      <DependentUpon>formNewPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="app\formNewRest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
     <EmbeddedResource Include="app\formNewItem.resx">
       <DependentUpon>formNewItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="app\formNewPedido.resx">
+      <DependentUpon>formNewPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="app\formNewRest.resx">
       <DependentUpon>formNewRest.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,6 +252,7 @@
     <None Include="docs\edit.png" />
     <None Include="docs\delete.png" />
     <None Include="docs\check.png" />
+    <None Include="docs\cross.png" />
     <Content Include="docs\index.html" />
     <None Include="docs\logo.png" />
     <Content Include="docs\logo.ico" />

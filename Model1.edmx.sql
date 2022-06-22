@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/19/2022 21:55:36
--- Generated from EDMX file: C:\Users\Miguel\source\repos\MoxxIsHere\PSI_DA_PLTV-E\Model1.edmx
+-- Date Created: 06/21/2022 09:13:04
+-- Generated from EDMX file: C:\Users\Botas\Desktop\DEV\ProjectodeDA\Model1.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [dadb];
+USE [db];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -143,7 +143,7 @@ GO
 -- Creating table 'Estados'
 CREATE TABLE [dbo].[Estados] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [estado] bit  NOT NULL
+    [estado] nvarchar(max)  NOT NULL
 );
 GO
 

@@ -114,7 +114,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="estado" Type="bit" Nullable="false" />
+    <Property Name="estado" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="Pagamentos">
     <Key>
@@ -434,15 +434,15 @@
           <NavigationProperty Name="Restaurantes" Relationship="Model1.PedidoRestaurante" FromRole="Pedido" ToRole="Restaurante" />
           <NavigationProperty Name="Estado" Relationship="Model1.EstadoPedido" FromRole="Pedido" ToRole="Estado" />
           <NavigationProperty Name="Clientes" Relationship="Model1.PedidoCliente" FromRole="Pedido" ToRole="Cliente" />
-          <NavigationProperty Name="Pagamentoes" Relationship="Model1.PedidoPagamento" FromRole="Pedido" ToRole="Pagamento" />
+          <NavigationProperty Name="Pagamentos" Relationship="Model1.PedidoPagamento" FromRole="Pedido" ToRole="Pagamento" />
         </EntityType>
         <EntityType Name="Estado">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="estado" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Pedidoes" Relationship="Model1.EstadoPedido" FromRole="Estado" ToRole="Pedido" />
+          <Property Name="estado" Type="String" Nullable="false" />
+          <NavigationProperty Name="Pedidos" Relationship="Model1.EstadoPedido" FromRole="Estado" ToRole="Pedido" />
         </EntityType>
         <EntityType Name="Cliente" BaseType="Model1.Pessoa">
           <Property Name="TotalGasto" Type="Decimal" Nullable="false" Scale="2" />
@@ -470,7 +470,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Metodopagamento" Type="String" Nullable="false" />
           <Property Name="Ativo" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Pagamentoes" Relationship="Model1.MetodoPagamentoPagamento" FromRole="MetodoPagamento" ToRole="Pagamento" />
+          <NavigationProperty Name="Pagamentos" Relationship="Model1.MetodoPagamentoPagamento" FromRole="MetodoPagamento" ToRole="Pagamento" />
         </EntityType>
         <EntityType Name="Morada">
           <Key>

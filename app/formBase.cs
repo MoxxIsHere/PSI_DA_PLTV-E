@@ -177,5 +177,29 @@ namespace ProjectodeDA
             indv.Show();
             this.Hide();
         }
+        private void novoClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formIndividuais indv = new formIndividuais(this, "nCliente", dados, gvRestaurantes.SelectedRows[0].DataBoundItem as Restaurante);
+            indv.Show();
+            this.Hide();
+        }
+        private void editarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formIndividuais indv = new formIndividuais(this, "vCliente", dados, gvRestaurantes.SelectedRows[0].DataBoundItem as Restaurante);
+            indv.Show();
+            this.Hide();
+        }
+        private void adicionarMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formIndividuais indv = new formIndividuais(this, "nMenu", dados, gvRestaurantes.SelectedRows[0].DataBoundItem as Restaurante);
+            indv.Show();
+            this.Hide();
+        }
+        private void gerirMenusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formIndividuais indv = new formIndividuais(this, "vMenu", dados, gvRestaurantes.SelectedRows[0].DataBoundItem as Restaurante);
+            indv.Show();
+            this.Hide();
+        }
     }
 }

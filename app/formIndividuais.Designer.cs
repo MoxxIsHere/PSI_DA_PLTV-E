@@ -47,19 +47,20 @@
             this.gerirMenusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPedidos = new System.Windows.Forms.TabPage();
+            this.toolStripPedidos = new System.Windows.Forms.ToolStrip();
+            this.gvPedidos = new System.Windows.Forms.DataGridView();
             this.tabClientes = new System.Windows.Forms.TabPage();
             this.tabMenu = new System.Windows.Forms.TabPage();
-            this.gvPedidos = new System.Windows.Forms.DataGridView();
-            this.toolStripPedidos = new System.Windows.Forms.ToolStrip();
             this.btNovoPedido = new System.Windows.Forms.ToolStripButton();
             this.btApagarPedido = new System.Windows.Forms.ToolStripButton();
-            this.btActivo = new System.Windows.Forms.ToolStripButton();
+            this.btCancelado = new System.Windows.Forms.ToolStripButton();
+            this.btFeito = new System.Windows.Forms.ToolStripButton();
             this.bsPedidosActivos = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPedidos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPedidos)).BeginInit();
             this.toolStripPedidos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPedidosActivos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -203,6 +204,30 @@
             this.tabPedidos.TabIndex = 0;
             this.tabPedidos.Text = "Pedidos";
             // 
+            // toolStripPedidos
+            // 
+            this.toolStripPedidos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btNovoPedido,
+            this.btApagarPedido,
+            this.btCancelado,
+            this.btFeito});
+            this.toolStripPedidos.Location = new System.Drawing.Point(3, 3);
+            this.toolStripPedidos.Name = "toolStripPedidos";
+            this.toolStripPedidos.Size = new System.Drawing.Size(1132, 28);
+            this.toolStripPedidos.TabIndex = 1;
+            this.toolStripPedidos.Text = "toolStrip1";
+            // 
+            // gvPedidos
+            // 
+            this.gvPedidos.AutoGenerateColumns = false;
+            this.gvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvPedidos.DataSource = this.bsPedidosActivos;
+            this.gvPedidos.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gvPedidos.Location = new System.Drawing.Point(3, 31);
+            this.gvPedidos.Name = "gvPedidos";
+            this.gvPedidos.Size = new System.Drawing.Size(1132, 501);
+            this.gvPedidos.TabIndex = 0;
+            // 
             // tabClientes
             // 
             this.tabClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
@@ -222,29 +247,6 @@
             this.tabMenu.Size = new System.Drawing.Size(1138, 535);
             this.tabMenu.TabIndex = 2;
             this.tabMenu.Text = "Menu";
-            // 
-            // gvPedidos
-            // 
-            this.gvPedidos.AutoGenerateColumns = false;
-            this.gvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvPedidos.DataSource = this.bsPedidosActivos;
-            this.gvPedidos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gvPedidos.Location = new System.Drawing.Point(3, 31);
-            this.gvPedidos.Name = "gvPedidos";
-            this.gvPedidos.Size = new System.Drawing.Size(1132, 501);
-            this.gvPedidos.TabIndex = 0;
-            // 
-            // toolStripPedidos
-            // 
-            this.toolStripPedidos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btNovoPedido,
-            this.btApagarPedido,
-            this.btActivo});
-            this.toolStripPedidos.Location = new System.Drawing.Point(3, 3);
-            this.toolStripPedidos.Name = "toolStripPedidos";
-            this.toolStripPedidos.Size = new System.Drawing.Size(1132, 28);
-            this.toolStripPedidos.TabIndex = 1;
-            this.toolStripPedidos.Text = "toolStrip1";
             // 
             // btNovoPedido
             // 
@@ -268,16 +270,26 @@
             this.btApagarPedido.Text = "Apagar";
             this.btApagarPedido.Click += new System.EventHandler(this.btApagarPedido_Click);
             // 
-            // btActivo
+            // btCancelado
             // 
-            this.btActivo.AutoSize = false;
-            this.btActivo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btActivo.Image = global::ProjectodeDA.Properties.Resources.check;
-            this.btActivo.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btActivo.Name = "btActivo";
-            this.btActivo.Size = new System.Drawing.Size(25, 25);
-            this.btActivo.Text = "Feito";
-            this.btActivo.Click += new System.EventHandler(this.btActivo_Click);
+            this.btCancelado.AutoSize = false;
+            this.btCancelado.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btCancelado.Image = global::ProjectodeDA.Properties.Resources.cross;
+            this.btCancelado.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btCancelado.Name = "btCancelado";
+            this.btCancelado.Size = new System.Drawing.Size(25, 25);
+            this.btCancelado.Text = "toolStripButton1";
+            // 
+            // btFeito
+            // 
+            this.btFeito.AutoSize = false;
+            this.btFeito.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btFeito.Image = global::ProjectodeDA.Properties.Resources.check;
+            this.btFeito.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btFeito.Name = "btFeito";
+            this.btFeito.Size = new System.Drawing.Size(25, 25);
+            this.btFeito.Text = "Feito";
+            this.btFeito.Click += new System.EventHandler(this.btActivo_Click);
             // 
             // formIndividuais
             // 
@@ -288,7 +300,8 @@
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formIndividuais";
-            this.Text = "placeholder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Restaurante";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formIndividuais_FormClosing);
             this.Load += new System.EventHandler(this.formIndividuais_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -296,9 +309,9 @@
             this.tabControl.ResumeLayout(false);
             this.tabPedidos.ResumeLayout(false);
             this.tabPedidos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPedidos)).EndInit();
             this.toolStripPedidos.ResumeLayout(false);
             this.toolStripPedidos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gvPedidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPedidosActivos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -331,6 +344,7 @@
         private System.Windows.Forms.ToolStrip toolStripPedidos;
         private System.Windows.Forms.ToolStripButton btNovoPedido;
         private System.Windows.Forms.ToolStripButton btApagarPedido;
-        private System.Windows.Forms.ToolStripButton btActivo;
+        private System.Windows.Forms.ToolStripButton btFeito;
+        private System.Windows.Forms.ToolStripButton btCancelado;
     }
 }
