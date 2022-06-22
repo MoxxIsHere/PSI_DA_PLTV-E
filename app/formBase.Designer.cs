@@ -44,8 +44,6 @@
             this.novoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.adicionarMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gerirMenusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsRestaurante = new System.Windows.Forms.ToolStrip();
             this.btNovoRest = new System.Windows.Forms.ToolStripButton();
             this.btEditarRest = new System.Windows.Forms.ToolStripButton();
@@ -167,27 +165,11 @@
             // 
             // menuToolStripMenuItem
             // 
-            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.adicionarMenuToolStripMenuItem,
-            this.gerirMenusToolStripMenuItem});
             this.menuToolStripMenuItem.Enabled = false;
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.menuToolStripMenuItem.Text = "Menu";
-            // 
-            // adicionarMenuToolStripMenuItem
-            // 
-            this.adicionarMenuToolStripMenuItem.Name = "adicionarMenuToolStripMenuItem";
-            this.adicionarMenuToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.adicionarMenuToolStripMenuItem.Text = "Adicionar Menu";
-            this.adicionarMenuToolStripMenuItem.Click += new System.EventHandler(this.adicionarMenuToolStripMenuItem_Click);
-            // 
-            // gerirMenusToolStripMenuItem
-            // 
-            this.gerirMenusToolStripMenuItem.Name = "gerirMenusToolStripMenuItem";
-            this.gerirMenusToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.gerirMenusToolStripMenuItem.Text = "Gerir Menus";
-            this.gerirMenusToolStripMenuItem.Click += new System.EventHandler(this.gerirMenusToolStripMenuItem_Click);
+            this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
             // 
             // tsRestaurante
             // 
@@ -301,6 +283,9 @@
             this.gvRestaurantes.AllowUserToDeleteRows = false;
             this.gvRestaurantes.AllowUserToResizeColumns = false;
             this.gvRestaurantes.AllowUserToResizeRows = false;
+            this.gvRestaurantes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gvRestaurantes.AutoGenerateColumns = false;
             this.gvRestaurantes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
             this.gvRestaurantes.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -319,7 +304,6 @@
             this.Morada});
             this.gvRestaurantes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gvRestaurantes.DataSource = this.bsBD;
-            this.gvRestaurantes.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gvRestaurantes.Location = new System.Drawing.Point(0, 56);
             this.gvRestaurantes.MultiSelect = false;
             this.gvRestaurantes.Name = "gvRestaurantes";
@@ -390,8 +374,6 @@
         private System.Windows.Forms.ToolStripMenuItem verPedidosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem novoClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarClienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem adicionarMenuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gerirMenusToolStripMenuItem;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
     }
 }

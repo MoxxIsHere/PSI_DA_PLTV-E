@@ -28,6 +28,8 @@
         <AssociationConnector Association="Model1.PessoaMorada" />
         <InheritanceConnector EntityType="Model1.Cliente" />
         <InheritanceConnector EntityType="Model1.Trabalhador" />
+        <AssociationConnector Association="Model1.ItemMenuPedido" />
+        <AssociationConnector Association="Model1.PedidoTrabalhador" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

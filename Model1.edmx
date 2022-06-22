@@ -18,6 +18,7 @@
     <EntitySet Name="Pessoas_Trabalhador" EntityType="Model1.Store.Pessoas_Trabalhador" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Pessoas_Cliente" EntityType="Model1.Store.Pessoas_Cliente" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ItemMenuRestaurante" EntityType="Model1.Store.ItemMenuRestaurante" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ItemMenuPedido" EntityType="Model1.Store.ItemMenuPedido" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="RestauranteMorada" Association="Model1.Store.RestauranteMorada">
       <End Role="Restaurante" EntitySet="Restaurantes" />
       <End Role="Morada" EntitySet="Moradas" />
@@ -61,6 +62,18 @@
     <AssociationSet Name="PessoaMorada" Association="Model1.Store.PessoaMorada">
       <End Role="Pessoa" EntitySet="Pessoas" />
       <End Role="Morada" EntitySet="Moradas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemMenuPedido_ItemMenu" Association="Model1.Store.FK_ItemMenuPedido_ItemMenu">
+      <End Role="ItemMenu" EntitySet="ItemMenus" />
+      <End Role="ItemMenuPedido" EntitySet="ItemMenuPedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemMenuPedido_Pedido" Association="Model1.Store.FK_ItemMenuPedido_Pedido">
+      <End Role="Pedido" EntitySet="Pedidos" />
+      <End Role="ItemMenuPedido" EntitySet="ItemMenuPedido" />
+    </AssociationSet>
+    <AssociationSet Name="PedidoTrabalhador" Association="Model1.Store.PedidoTrabalhador">
+      <End Role="Pedido" EntitySet="Pedidos" />
+      <End Role="Trabalhador" EntitySet="Pessoas_Trabalhador" />
     </AssociationSet>
     <AssociationSet Name="FK_Trabalhador_inherits_Pessoa" Association="Model1.Store.FK_Trabalhador_inherits_Pessoa">
       <End Role="Pessoa" EntitySet="Pessoas" />
@@ -108,6 +121,7 @@
     <Property Name="Restaurantes_Id" Type="int" Nullable="false" />
     <Property Name="Estado_Id" Type="int" Nullable="false" />
     <Property Name="Clientes_Id" Type="int" Nullable="false" />
+    <Property Name="Trabalhadors_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Estados">
     <Key>
@@ -176,6 +190,14 @@
     </Key>
     <Property Name="ItemMenu_Id" Type="int" Nullable="false" />
     <Property Name="Restaurantes_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ItemMenuPedido">
+    <Key>
+      <PropertyRef Name="ItemMenu_Id" />
+      <PropertyRef Name="Pedidoes_Id" />
+    </Key>
+    <Property Name="ItemMenu_Id" Type="int" Nullable="false" />
+    <Property Name="Pedidoes_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="RestauranteMorada">
     <End Role="Restaurante" Type="Model1.Store.Restaurantes" Multiplicity="*" />
@@ -285,6 +307,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="PedidoTrabalhador">
+    <End Role="Pedido" Type="Model1.Store.Pedidos" Multiplicity="*" />
+    <End Role="Trabalhador" Type="Model1.Store.Pessoas_Trabalhador" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Trabalhador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="Trabalhadors_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ItemMenuRestaurante_ItemMenu">
     <End Role="ItemMenu" Type="Model1.Store.ItemMenus" Multiplicity="1" />
     <End Role="ItemMenuRestaurante" Type="Model1.Store.ItemMenuRestaurante" Multiplicity="*" />
@@ -306,6 +340,30 @@
       </Principal>
       <Dependent Role="ItemMenuRestaurante">
         <PropertyRef Name="Restaurantes_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemMenuPedido_ItemMenu">
+    <End Role="ItemMenu" Type="Model1.Store.ItemMenus" Multiplicity="1" />
+    <End Role="ItemMenuPedido" Type="Model1.Store.ItemMenuPedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemMenu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemMenuPedido">
+        <PropertyRef Name="ItemMenu_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemMenuPedido_Pedido">
+    <End Role="ItemMenuPedido" Type="Model1.Store.ItemMenuPedido" Multiplicity="*" />
+    <End Role="Pedido" Type="Model1.Store.Pedidos" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Pedido">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ItemMenuPedido">
+        <PropertyRef Name="Pedidoes_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -391,6 +449,14 @@
             <End Role="Pessoa" EntitySet="Pessoas" />
             <End Role="Morada" EntitySet="Moradas" />
           </AssociationSet>
+          <AssociationSet Name="ItemMenuPedido" Association="Model1.ItemMenuPedido">
+            <End Role="ItemMenu" EntitySet="ItemMenus" />
+            <End Role="Pedido" EntitySet="Pedidos" />
+          </AssociationSet>
+          <AssociationSet Name="PedidoTrabalhador" Association="Model1.PedidoTrabalhador">
+            <End Role="Pedido" EntitySet="Pedidos" />
+            <End Role="Trabalhador" EntitySet="Pessoas" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Restaurante">
           <Key>
@@ -415,6 +481,7 @@
           <Property Name="Ativo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Restaurantes" Relationship="Model1.ItemMenuRestaurante" FromRole="ItemMenu" ToRole="Restaurante" />
           <NavigationProperty Name="Categoria" Relationship="Model1.CategoriaItemMenu" FromRole="ItemMenu" ToRole="Categoria" />
+          <NavigationProperty Name="Pedidoes" Relationship="Model1.ItemMenuPedido" FromRole="ItemMenu" ToRole="Pedido" />
         </EntityType>
         <EntityType Name="Categoria">
           <Key>
@@ -435,6 +502,8 @@
           <NavigationProperty Name="Estado" Relationship="Model1.EstadoPedido" FromRole="Pedido" ToRole="Estado" />
           <NavigationProperty Name="Clientes" Relationship="Model1.PedidoCliente" FromRole="Pedido" ToRole="Cliente" />
           <NavigationProperty Name="Pagamentos" Relationship="Model1.PedidoPagamento" FromRole="Pedido" ToRole="Pagamento" />
+          <NavigationProperty Name="ItemMenu" Relationship="Model1.ItemMenuPedido" FromRole="Pedido" ToRole="ItemMenu" />
+          <NavigationProperty Name="Trabalhadors" Relationship="Model1.PedidoTrabalhador" FromRole="Pedido" ToRole="Trabalhador" />
         </EntityType>
         <EntityType Name="Estado">
           <Key>
@@ -453,6 +522,7 @@
           <Property Name="Salario" Type="Decimal" Nullable="false" Scale="2" />
           <Property Name="Posicao" Type="String" Nullable="false" />
           <NavigationProperty Name="Restaurante" Relationship="Model1.RestauranteTrabalhador" FromRole="Trabalhador" ToRole="Restaurante" />
+          <NavigationProperty Name="Pedido" Relationship="Model1.PedidoTrabalhador" FromRole="Trabalhador" ToRole="Pedido" />
         </EntityType>
         <EntityType Name="Pagamento">
           <Key>
@@ -532,6 +602,14 @@
         <Association Name="PessoaMorada">
           <End Type="Model1.Pessoa" Role="Pessoa" Multiplicity="0..1" />
           <End Type="Model1.Morada" Role="Morada" Multiplicity="1" />
+        </Association>
+        <Association Name="ItemMenuPedido">
+          <End Type="Model1.ItemMenu" Role="ItemMenu" Multiplicity="*" />
+          <End Type="Model1.Pedido" Role="Pedido" Multiplicity="*" />
+        </Association>
+        <Association Name="PedidoTrabalhador">
+          <End Type="Model1.Pedido" Role="Pedido" Multiplicity="*" />
+          <End Type="Model1.Trabalhador" Role="Trabalhador" Multiplicity="1" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -712,6 +790,22 @@
         <ScalarProperty Name="Id" ColumnName="Moradas_Id" />
       </EndProperty>
       <EndProperty Name="Pessoa">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ItemMenuPedido" TypeName="Model1.ItemMenuPedido" StoreEntitySet="ItemMenuPedido">
+      <EndProperty Name="ItemMenu">
+        <ScalarProperty Name="Id" ColumnName="ItemMenu_Id" />
+      </EndProperty>
+      <EndProperty Name="Pedido">
+        <ScalarProperty Name="Id" ColumnName="Pedidoes_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PedidoTrabalhador" TypeName="Model1.PedidoTrabalhador" StoreEntitySet="Pedidos">
+      <EndProperty Name="Trabalhador">
+        <ScalarProperty Name="Id" ColumnName="Trabalhadors_Id" />
+      </EndProperty>
+      <EndProperty Name="Pedido">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>

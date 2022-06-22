@@ -18,6 +18,7 @@ namespace ProjectodeDA
         public Pedido()
         {
             this.Pagamentos = new HashSet<Pagamento>();
+            this.ItemMenu = new HashSet<ItemMenu>();
         }
     
         public int Id { get; set; }
@@ -28,5 +29,8 @@ namespace ProjectodeDA
         public virtual Cliente Clientes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pagamento> Pagamentos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ItemMenu> ItemMenu { get; set; }
+        public virtual Trabalhador Trabalhadors { get; set; }
     }
 }

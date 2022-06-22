@@ -245,6 +245,7 @@
             this.tbPais.Name = "tbPais";
             this.tbPais.Size = new System.Drawing.Size(120, 20);
             this.tbPais.TabIndex = 30;
+            this.tbPais.Text = "Portugal";
             // 
             // label4
             // 

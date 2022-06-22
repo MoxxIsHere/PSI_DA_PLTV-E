@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/21/2022 09:13:04
--- Generated from EDMX file: C:\Users\Botas\Desktop\DEV\ProjectodeDA\Model1.edmx
+-- Date Created: 06/22/2022 14:52:13
+-- Generated from EDMX file: C:\Users\Miguel\source\repos\MoxxIsHere\PSI_DA_PLTV-E\Model1.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [db];
+USE [dadb];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -49,6 +49,15 @@ IF OBJECT_ID(N'[dbo].[FK_MetodoPagamentoPagamento]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_PessoaMorada]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Pessoas] DROP CONSTRAINT [FK_PessoaMorada];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ItemMenuPedido_ItemMenu]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ItemMenuPedido] DROP CONSTRAINT [FK_ItemMenuPedido_ItemMenu];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ItemMenuPedido_Pedido]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ItemMenuPedido] DROP CONSTRAINT [FK_ItemMenuPedido_Pedido];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PedidoTrabalhador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Pedidos] DROP CONSTRAINT [FK_PedidoTrabalhador];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Trabalhador_inherits_Pessoa]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Pessoas_Trabalhador] DROP CONSTRAINT [FK_Trabalhador_inherits_Pessoa];
@@ -97,6 +106,9 @@ GO
 IF OBJECT_ID(N'[dbo].[ItemMenuRestaurante]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ItemMenuRestaurante];
 GO
+IF OBJECT_ID(N'[dbo].[ItemMenuPedido]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ItemMenuPedido];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -136,7 +148,8 @@ CREATE TABLE [dbo].[Pedidos] (
     [ValorTotal] decimal(18,2)  NOT NULL,
     [Restaurantes_Id] int  NOT NULL,
     [Estado_Id] int  NOT NULL,
-    [Clientes_Id] int  NOT NULL
+    [Clientes_Id] int  NOT NULL,
+    [Trabalhadors_Id] int  NOT NULL
 );
 GO
 
@@ -204,6 +217,13 @@ GO
 CREATE TABLE [dbo].[ItemMenuRestaurante] (
     [ItemMenu_Id] int  NOT NULL,
     [Restaurantes_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'ItemMenuPedido'
+CREATE TABLE [dbo].[ItemMenuPedido] (
+    [ItemMenu_Id] int  NOT NULL,
+    [Pedidoes_Id] int  NOT NULL
 );
 GO
 
@@ -281,6 +301,12 @@ GO
 ALTER TABLE [dbo].[ItemMenuRestaurante]
 ADD CONSTRAINT [PK_ItemMenuRestaurante]
     PRIMARY KEY CLUSTERED ([ItemMenu_Id], [Restaurantes_Id] ASC);
+GO
+
+-- Creating primary key on [ItemMenu_Id], [Pedidoes_Id] in table 'ItemMenuPedido'
+ALTER TABLE [dbo].[ItemMenuPedido]
+ADD CONSTRAINT [PK_ItemMenuPedido]
+    PRIMARY KEY CLUSTERED ([ItemMenu_Id], [Pedidoes_Id] ASC);
 GO
 
 -- --------------------------------------------------
@@ -444,6 +470,45 @@ GO
 CREATE INDEX [IX_FK_PessoaMorada]
 ON [dbo].[Pessoas]
     ([Moradas_Id]);
+GO
+
+-- Creating foreign key on [ItemMenu_Id] in table 'ItemMenuPedido'
+ALTER TABLE [dbo].[ItemMenuPedido]
+ADD CONSTRAINT [FK_ItemMenuPedido_ItemMenu]
+    FOREIGN KEY ([ItemMenu_Id])
+    REFERENCES [dbo].[ItemMenus]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [Pedidoes_Id] in table 'ItemMenuPedido'
+ALTER TABLE [dbo].[ItemMenuPedido]
+ADD CONSTRAINT [FK_ItemMenuPedido_Pedido]
+    FOREIGN KEY ([Pedidoes_Id])
+    REFERENCES [dbo].[Pedidos]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ItemMenuPedido_Pedido'
+CREATE INDEX [IX_FK_ItemMenuPedido_Pedido]
+ON [dbo].[ItemMenuPedido]
+    ([Pedidoes_Id]);
+GO
+
+-- Creating foreign key on [Trabalhadors_Id] in table 'Pedidos'
+ALTER TABLE [dbo].[Pedidos]
+ADD CONSTRAINT [FK_PedidoTrabalhador]
+    FOREIGN KEY ([Trabalhadors_Id])
+    REFERENCES [dbo].[Pessoas_Trabalhador]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_PedidoTrabalhador'
+CREATE INDEX [IX_FK_PedidoTrabalhador]
+ON [dbo].[Pedidos]
+    ([Trabalhadors_Id]);
 GO
 
 -- Creating foreign key on [Id] in table 'Pessoas_Trabalhador'

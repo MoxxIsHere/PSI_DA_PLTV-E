@@ -1,9 +1,15 @@
 ﻿using ProjectodeDA.app;
-
 using System;
 using System.Linq;
 using System.Windows.Forms;
 using System.Collections.Generic;
+// Programa Criado por:
+//
+// Miguel Pereira Agostinho
+//Aluno 2213127 da Escola
+// Superior de Tecnologia e
+// Gestão do Instituto
+// Politécnico de Leiria
 namespace ProjectodeDA
 {
     public partial class formBase : Form
@@ -189,13 +195,7 @@ namespace ProjectodeDA
             indv.Show();
             this.Hide();
         }
-        private void adicionarMenuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            formIndividuais indv = new formIndividuais(this, "nMenu", dados, gvRestaurantes.SelectedRows[0].DataBoundItem as Restaurante);
-            indv.Show();
-            this.Hide();
-        }
-        private void gerirMenusToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formIndividuais indv = new formIndividuais(this, "vMenu", dados, gvRestaurantes.SelectedRows[0].DataBoundItem as Restaurante);
             indv.Show();

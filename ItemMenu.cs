@@ -18,6 +18,7 @@ namespace ProjectodeDA
         public ItemMenu()
         {
             this.Restaurantes = new HashSet<Restaurante>();
+            this.Pedidoes = new HashSet<Pedido>();
         }
     
         public int Id { get; set; }
@@ -30,5 +31,7 @@ namespace ProjectodeDA
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Restaurante> Restaurantes { get; set; }
         public virtual Categoria Categoria { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pedido> Pedidoes { get; set; }
     }
 }

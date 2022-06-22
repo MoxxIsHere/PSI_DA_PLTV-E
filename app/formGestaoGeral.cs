@@ -20,7 +20,7 @@ namespace ProjectodeDA.app
                 case "empregados":
                     tabsControl.SelectedTab = tabEmpregados;
                     List<Trabalhador> empregados = new List<Trabalhador>();
-                    foreach (Trabalhador pessoa in dados.Pessoas)
+                    foreach (Trabalhador pessoa in dados.Pessoas.OfType<Trabalhador>().ToList<Trabalhador>())
                     {
                         empregados.Add(pessoa);
                     }
@@ -54,7 +54,7 @@ namespace ProjectodeDA.app
         private void formGestaoGeral_Activated(object sender, System.EventArgs e)
         {
             List<Trabalhador> empregados = new List<Trabalhador>();
-            foreach (Trabalhador pessoa in dados.Pessoas)
+            foreach (Trabalhador pessoa in dados.Pessoas.OfType<Trabalhador>().ToList<Trabalhador>())
             {
                 empregados.Add(pessoa);
             }
@@ -195,9 +195,12 @@ namespace ProjectodeDA.app
         }
         private void toolStripButton8_Click(object sender, System.EventArgs e)
         {
-            dados.ItemMenus.Remove(gvItems.SelectedRows[0].DataBoundItem as ItemMenu);
-            dados.SaveChanges();
-            bsItems.DataSource = dados.ItemMenus.ToList<ItemMenu>();
+            if (gvItems.SelectedRows.Count > 0)
+            {
+                dados.ItemMenus.Remove(gvItems.SelectedRows[0].DataBoundItem as ItemMenu);
+                dados.SaveChanges();
+                bsItems.DataSource = dados.ItemMenus.ToList<ItemMenu>();
+            }
         }
         private void tabsControl_TabIndexChanged(object sender, System.EventArgs e)
         {
@@ -212,7 +215,7 @@ namespace ProjectodeDA.app
         private void formGestaoGeral_Load(object sender, System.EventArgs e)
         {
             List<Trabalhador> empregados = new List<Trabalhador>();
-            foreach (Trabalhador pessoa in dados.Pessoas)
+            foreach (Trabalhador pessoa in dados.Pessoas.OfType<Trabalhador>().ToList<Trabalhador>())
             {
                 empregados.Add(pessoa);
             }
@@ -261,6 +264,7 @@ namespace ProjectodeDA.app
                         categorisedItems.Add(c);
                     }
                 }
+                lblCategoria.Text = e.ClickedItem.Text;
                 bsItems.DataSource = categorisedItems;
             }
         }

@@ -88,6 +88,7 @@ namespace ProjectodeDA.app
             if(EditStatus)
             {
                 MemoryStream ims = new MemoryStream(Convert.FromBase64String(editItem.Fotografia));
+                readBytes = ims.ToArray();
                 originalImage = Image.FromStream(ims);
                 chosenImage = originalImage;
                 pictureBox1.Image = originalImage;
@@ -99,9 +100,16 @@ namespace ProjectodeDA.app
         }
         private bool CheckFilled()
         {
-            if (tbNome.Text.Length > 0 && tbIngred.Text.Length > 0 && (dataGridView1.SelectedRows[0].DataBoundItem as Categoria) != null && chosenImage != null)
+            if(dataGridView1.SelectedRows.Count > 0)
             {
-                return true;
+                if (tbNome.Text.Length > 0 && tbIngred.Text.Length > 0 && (dataGridView1.SelectedRows[0].DataBoundItem as Categoria) != null && chosenImage != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {

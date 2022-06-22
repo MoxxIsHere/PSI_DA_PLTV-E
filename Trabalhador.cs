@@ -14,9 +14,17 @@ namespace ProjectodeDA
     
     public partial class Trabalhador : Pessoa
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Trabalhador()
+        {
+            this.Pedido = new HashSet<Pedido>();
+        }
+    
         public decimal Salario { get; set; }
         public string Posicao { get; set; }
     
         public virtual Restaurante Restaurante { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pedido> Pedido { get; set; }
     }
 }

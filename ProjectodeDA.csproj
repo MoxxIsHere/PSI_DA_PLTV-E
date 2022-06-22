@@ -99,6 +99,18 @@
     <Compile Include="app\formIndividuais.Designer.cs">
       <DependentUpon>formIndividuais.cs</DependentUpon>
     </Compile>
+    <Compile Include="app\formNewCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="app\formNewCliente.Designer.cs">
+      <DependentUpon>formNewCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="app\formNewEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="app\formNewEstado.Designer.cs">
+      <DependentUpon>formNewEstado.cs</DependentUpon>
+    </Compile>
     <Compile Include="app\formNewItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +134,12 @@
     </Compile>
     <Compile Include="app\formNewWorker.Designer.cs">
       <DependentUpon>formNewWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="app\formPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="app\formPagar.Designer.cs">
+      <DependentUpon>formPagar.cs</DependentUpon>
     </Compile>
     <Compile Include="app\Program.cs" />
     <Compile Include="Categoria.cs">
@@ -167,7 +185,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="partials\Categoria%28partial%29.cs" />
+    <Compile Include="partials\Estado%28partial%29.cs" />
     <Compile Include="partials\ItemMenu%28partial%29.cs" />
+    <Compile Include="partials\MetodoPagamento%28partial%29.cs" />
     <Compile Include="partials\Pessoa%28partial%29.cs" />
     <Compile Include="partials\Restaurante%28partial%29.cs" />
     <Compile Include="partials\Morada%28partial%29.cs" />
@@ -196,6 +216,12 @@
     <EmbeddedResource Include="app\formIndividuais.resx">
       <DependentUpon>formIndividuais.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="app\formNewCliente.resx">
+      <DependentUpon>formNewCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="app\formNewEstado.resx">
+      <DependentUpon>formNewEstado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="app\formNewItem.resx">
       <DependentUpon>formNewItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="app\formNewMetodoPag.resx">
       <DependentUpon>formNewMetodoPag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="app\formPagar.resx">
+      <DependentUpon>formPagar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -253,12 +282,14 @@
     <None Include="docs\delete.png" />
     <None Include="docs\check.png" />
     <None Include="docs\cross.png" />
+    <None Include="docs\configure.png" />
     <Content Include="docs\index.html" />
     <None Include="docs\logo.png" />
     <Content Include="docs\logo.ico" />
     <None Include="docs\refresh.png" />
     <None Include="docs\search.png" />
     <None Include="docs\new.png" />
+    <None Include="docs\pay.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
