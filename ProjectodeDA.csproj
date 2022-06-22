@@ -290,6 +290,7 @@
     <None Include="docs\search.png" />
     <None Include="docs\new.png" />
     <None Include="docs\pay.png" />
+    <None Include="docs\printer.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

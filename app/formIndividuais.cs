@@ -2,6 +2,9 @@
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
+using System.Drawing.Printing;
+using static System.Net.Mime.MediaTypeNames;
+
 namespace ProjectodeDA.app
 {
     public partial class formIndividuais : Form
@@ -119,12 +122,21 @@ namespace ProjectodeDA.app
             {
                 Pedido selped = gvPedidos.SelectedRows[0].DataBoundItem as Pedido;
                 cbEstado.SelectedItem = selped.Estado;
-                tbPedidoInfo.Text = $" Cliente:\n   {selped.Clientes}\n\n Items:\n";
+                tbPedidoInfo.Text = $" Cliente:\n   Nome: {selped.Clientes}\n   NIF: {selped.Clientes.NumContribuinte}\n   Morada: {selped.Clientes.Moradas}\n\n Items:\n";
+                int p = 1;
                 foreach(ItemMenu im in selped.ItemMenu.ToList<ItemMenu>())
                 {
-                    tbPedidoInfo.Text += $"   {im.Nome}\n";
+                    tbPedidoInfo.Text += $"   Item {p}: {im.Nome} | {im.Preco}€\n";
+                    p++;
                 }
-                tbPedidoInfo.Text += $"\n Empregado:\n   {selped.Trabalhadors}";
+                tbPedidoInfo.Text += $"\n\n Pagamentos:\n";
+                int i = 1;
+                foreach (Pagamento pg in selped.Pagamentos.ToList<Pagamento>())
+                {
+                    tbPedidoInfo.Text += $"   Pagamento {i}:\n      Método: {pg.MetodoPagamento}\n      Valor: {pg.Valor}\n";
+                    i++;
+                }
+                tbPedidoInfo.Text += $"\n Empregado:\n   Nome: {selped.Trabalhadors}\n   Posição: {selped.Trabalhadors.Posicao}";
             }
         }
         private void verPedidosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -144,12 +156,21 @@ namespace ProjectodeDA.app
             {
                 Pedido selped = gvPedidos.SelectedRows[0].DataBoundItem as Pedido;
                 cbEstado.SelectedItem = selped.Estado;
-                tbPedidoInfo.Text = $" Cliente:\n   {selped.Clientes}\n\n Items:\n";
+                tbPedidoInfo.Text = $" Cliente:\n   Nome: {selped.Clientes}\n   NIF: {selped.Clientes.NumContribuinte}\n   Morada: {selped.Clientes.Moradas}\n\n Items:\n";
+                int p = 1;
                 foreach (ItemMenu im in selped.ItemMenu.ToList<ItemMenu>())
                 {
-                    tbPedidoInfo.Text += $"   {im.Nome}\n";
+                    tbPedidoInfo.Text += $"   Item {p}: {im.Nome} | {im.Preco}€\n";
+                    p++;
                 }
-                tbPedidoInfo.Text += $"\n Empregado:\n   {selped.Trabalhadors}";
+                tbPedidoInfo.Text += $"\n\n Pagamentos:\n";
+                int i = 1;
+                foreach (Pagamento pg in selped.Pagamentos.ToList<Pagamento>())
+                {
+                    tbPedidoInfo.Text += $"   Pagamento {i}:\n      Método: {pg.MetodoPagamento}\n      Valor: {pg.Valor}\n";
+                    i++;
+                }
+                tbPedidoInfo.Text += $"\n Empregado:\n   Nome: {selped.Trabalhadors}\n   Posição: {selped.Trabalhadors.Posicao}";
             }
             cbEstado.Items.Clear();
             cbFiltro.Items.Clear();
@@ -327,6 +348,39 @@ namespace ProjectodeDA.app
             {
                 bsClientes.DataSource = dados.Pessoas.OfType<Cliente>().ToList<Cliente>();
             }
+        }
+        private void btPrint_Click(object sender, EventArgs e)
+        {
+            if (gvPedidos.SelectedRows.Count > 0)
+            {
+                DialogResult result = printDialog.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    printDocument.Print();
+                }
+            }
+        }
+        private void printDocument_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            string page;
+            Pedido selped = gvPedidos.SelectedRows[0].DataBoundItem as Pedido;
+            page = $" Pedido:\n   Id: {selped.Id}\n\n Cliente:\n   Nome: {selped.Clientes}\n   NIF: {selped.Clientes.NumContribuinte}\n   Morada: {selped.Clientes.Moradas}\n\n Items:\n";
+            int p = 1;
+            foreach (ItemMenu im in selped.ItemMenu.ToList<ItemMenu>())
+            {
+                page += $"   Item {p}: {im.Nome} | {im.Preco}€\n";
+                p++;
+            }
+            page += $"\n\n Pagamentos:\n";
+            int i = 1;
+            foreach (Pagamento pg in selped.Pagamentos.ToList<Pagamento>())
+            {
+                page += $"   Pagamento {i}:\n      Método: {pg.MetodoPagamento}\n      Valor: {pg.Valor}\n";
+                i++;
+            }
+            page += $"\n Empregado:\n   Nome: {selped.Trabalhadors}\n   Posição: {selped.Trabalhadors.Posicao}";
+            System.Drawing.Font printFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Regular);
+            e.Graphics.DrawString(page, printFont, System.Drawing.Brushes.Black, 5, 5);
         }
     }
 }
