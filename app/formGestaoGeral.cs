@@ -66,7 +66,7 @@ namespace ProjectodeDA.app
         private void btActEmp_Click(object sender, System.EventArgs e)
         {
             List<Trabalhador> empregados = new List<Trabalhador>();
-            foreach (Trabalhador pessoa in dados.Pessoas)
+            foreach (Trabalhador pessoa in dados.Pessoas.OfType<Trabalhador>().ToList<Trabalhador>())
             {
                 empregados.Add(pessoa);
             }
@@ -78,7 +78,7 @@ namespace ProjectodeDA.app
             if (tbPesqEmp.Text != null)
             {
                 List<Trabalhador> empregadosSorted = new List<Trabalhador>();
-                foreach (Trabalhador pessoa in dados.Pessoas)
+                foreach (Trabalhador pessoa in dados.Pessoas.OfType<Trabalhador>().ToList<Trabalhador>())
                 {
                     if (pessoa.Nome.Contains(tbPesqEmp.Text))
                     {
@@ -90,7 +90,7 @@ namespace ProjectodeDA.app
             else
             {
                 List<Trabalhador> empregados = new List<Trabalhador>();
-                foreach (Trabalhador pessoa in dados.Pessoas)
+                foreach (Trabalhador pessoa in dados.Pessoas.OfType<Trabalhador>().ToList<Trabalhador>())
                 {
                     empregados.Add(pessoa);
                 }
@@ -102,7 +102,7 @@ namespace ProjectodeDA.app
             if (tbPesqEmp.Text != null)
             {
                 List<Trabalhador> empregadosSorted = new List<Trabalhador>();
-                foreach (Trabalhador pessoa in dados.Pessoas)
+                foreach (Trabalhador pessoa in dados.Pessoas.OfType<Trabalhador>().ToList<Trabalhador>())
                 {
                     if (pessoa.Nome.Contains(tbPesqEmp.Text) || pessoa.Posicao.Contains(tbPesqEmp.Text))
                     {
@@ -114,7 +114,7 @@ namespace ProjectodeDA.app
             else
             {
                 List<Trabalhador> empregados = new List<Trabalhador>();
-                foreach (Trabalhador pessoa in dados.Pessoas)
+                foreach (Trabalhador pessoa in dados.Pessoas.OfType<Trabalhador>().ToList<Trabalhador>())
                 {
                     empregados.Add(pessoa);
                 }
@@ -151,7 +151,7 @@ namespace ProjectodeDA.app
             if (tbMetodosPesquisa.Text != null)
             {
                 List<MetodoPagamento> metodosPesq = new List<MetodoPagamento>();
-                foreach (MetodoPagamento pesq in dados.MetodosPagamento)
+                foreach (MetodoPagamento pesq in dados.MetodosPagamento.ToList<MetodoPagamento>())
                 {
                     if(pesq.Metodopagamento.Contains(tbMetodosPesquisa.Text))
                     {
@@ -169,7 +169,7 @@ namespace ProjectodeDA.app
             if (tbMetodosPesquisa.Text != null)
             {
                 List<MetodoPagamento> metodosPesq = new List<MetodoPagamento>();
-                foreach (MetodoPagamento pesq in dados.MetodosPagamento)
+                foreach (MetodoPagamento pesq in dados.MetodosPagamento.ToList<MetodoPagamento>())
                 {
                     if (pesq.Metodopagamento.Contains(tbMetodosPesquisa.Text))
                     {
@@ -206,7 +206,7 @@ namespace ProjectodeDA.app
         {
             if(tabsControl.SelectedTab == tabMenuItems)
             {
-                foreach (ItemMenu c in dados.ItemMenus)
+                foreach (ItemMenu c in dados.ItemMenus.ToList<ItemMenu>())
                 {
 
                 }
