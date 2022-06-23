@@ -1,7 +1,5 @@
 # Projecto de Desenvolvimento de Aplicações
 
----
-
 ## Índice
 
 - [Projecto de DA](#projecto-de-desenvolvimento-de-aplicações)
@@ -13,19 +11,13 @@
 - [Execução](#execução)
 	1. [Localizar o Executável](#localizar-o-executável)
 
----
-
 # Instalação
-
----
 
 ## Requerimentos
 
 - **Sistema Operativo Windows** (WindowsXP, Windows Vista, Windows 10, Windows11)
 - **Visual Studio [2016 - 2022]**
 - **dotNet Framework** (vem com o Visual Studio)
-
----
 
 ## Criação da Base de Dados
 
@@ -63,8 +55,6 @@ Um novo separador vai abrir, isto pode demorar até um minuto dependente do comp
 
 Após a execução pode fechar os separadores abertos no **Visual Studio**
 
----
-
 ## Compilação
 
 Pressione **CTRL+ALT+L**, selecione "**ProjectodeDA.sln**" e clique duas vezes
@@ -75,11 +65,7 @@ Pressione **CTRL+SHIFT+B** e espere uns segundos, quando disser "*Build Succeede
 
 ![instrucao12](https://media.discordapp.net/attachments/977145596727156746/989325355896668181/unknown.png)
 
----
-
 # Execução
-
----
 
 ## Localizar o Executável
 
@@ -90,5 +76,3 @@ O executável chama-se **ProjectodeDA.exe** e encontra-se no directório "***\bi
 ![instrucao14](https://media.discordapp.net/attachments/977145596727156746/989326886029111336/unknown.png)
 
 [**Regressar ao Topo**](#índice)
-
----
