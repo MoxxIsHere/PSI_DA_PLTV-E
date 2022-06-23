@@ -23,7 +23,7 @@
 
 Criar uma pasta chamada "BaseDados" na ***root*** do Disco Local **C**, o caminho deve ficar "***C:\BaseDados\\***"
 
-![instrucao1](https://media.discordapp.net/attachments/813165924533927966/989305269647470652/unknown.png)
+![instrucao1](https://media.discordapp.net/attachments/977145596727156746/989337642703396864/unknown.png)
 
 Com o **Visual Studio**, executar a geração da base de dados a partir do modelo **Model1.edmx**, que se encontra na mesma pasta que este ficheiro, clicando no fundo de ecrã do editor, e escolhendo "**Generate Database from Model...**"
 
